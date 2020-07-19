@@ -200,6 +200,81 @@
             
 
   
+    <article id="post-栈的应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">栈的应用</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/" class="archive-article-date">
+        <time datetime="2020-07-19T03:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 99;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Op</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">char</span> op, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'+'</span>) <span class="keyword">return</span> a + b;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'*'</span>) <span class="keyword">return</span> a * b;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'-'</span>) <span class="keyword">return</span> a - b;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'/'</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"除数不为0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> a / b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//后缀表达式</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculate</span><span class="params">(<span class="keyword">char</span> s[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> Stack[<span class="number">99</span>];</span><br><span class="line">	<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;s[i] != <span class="string">'\0'</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] &gt;= <span class="string">'0'</span> &amp;&amp; s[i] &lt;= <span class="string">'9'</span>) &#123;</span><br><span class="line">			Stack[++top] = s[i] - <span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			Stack[++top] = Op(Stack[top--], s[i], Stack[top--]);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Stack[top];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="括号匹配"><a href="#括号匹配" class="headerlink" title="括号匹配"></a>括号匹配</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//括号匹配</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">match</span><span class="params">(<span class="keyword">char</span> s[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">char</span> Stack[<span class="number">99</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;s[i] != <span class="string">'\0'</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] == <span class="string">'('</span>) Stack[++top] = s[i];</span><br><span class="line">		<span class="keyword">if</span> (s[i] == <span class="string">')'</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (top == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			top--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="keyword">if</span> (top == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> s[] = <span class="string">"24*8+"</span>;</span><br><span class="line">	<span class="keyword">char</span> s1[] = <span class="string">"((((df45)df)df)"</span>;</span><br><span class="line">	<span class="keyword">int</span> res = calculate(s);</span><br><span class="line">	<span class="comment">//cout &lt;&lt; res;</span></span><br><span class="line">	<span class="keyword">if</span>(!match(s1))</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"不匹配"</span>;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"匹配"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Untitled" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -594,11 +669,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">桶排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">桶排序</a>
         		</li>
       		
 		</ul>
@@ -1054,95 +1129,6 @@
 
 
   
-    <article id="post-记录心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/%E8%AE%B0%E5%BD%95%E5%BF%83%E5%BE%97/">微信小程序登录实现</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/%E8%AE%B0%E5%BD%95%E5%BF%83%E5%BE%97/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="微信小程序篇"><a href="#微信小程序篇" class="headerlink" title="微信小程序篇"></a>微信小程序篇</h1><h2 id="微信小程序之表单验证"><a href="#微信小程序之表单验证" class="headerlink" title="微信小程序之表单验证"></a>微信小程序之表单验证</h2><p><a href="https://www.cnblogs.com/zhangxiaoyong/p/10166951.html" target="_blank" rel="noopener">教程点我</a>.<br>用了个插件，总之用起来贼方便。。。</p>
-<h2 id="微信小程序之页面之间传递数据"><a href="#微信小程序之页面之间传递数据" class="headerlink" title="微信小程序之页面之间传递数据"></a>微信小程序之页面之间传递数据</h2><p><a href="https://www.cnblogs.com/donke/p/9694203.html" target="_blank" rel="noopener">教程点它，记得回来看我</a>.<br>最终我采取了全局变量的方法，坑先埋这，日后体会。</p>
-<h2 id="身份证OCR"><a href="#身份证OCR" class="headerlink" title="身份证OCR"></a>身份证OCR</h2><ul>
-<li><a href="https://www.cnblogs.com/donke/p/9694203.html" target="_blank" rel="noopener">百度智能云官网</a>.文档写的挺好的，就是回调时经常歇菜，看错误码是token失效，mdzz,以后慎用。
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">wx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/%E8%AE%B0%E5%BD%95%E5%BF%83%E5%BE%97/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next</a>
@@ -1284,6 +1270,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">wx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
@@ -1304,19 +1294,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">wx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,31 +1306,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1368,7 +1322,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1376,7 +1346,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
+                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,6 +1355,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,16 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://2206411193.github.io">
-  <title>Archives: 2020/4 | 邱智斌的个人博客</title>
+  <title>栈的应用2 | 邱智斌的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="本站是邱智斌的个人分享博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邱智斌的个人博客">
-<meta property="og:url" content="https://2206411193.github.io/archives/2020/04/page/7/index.html">
+  <meta name="description" content="共享栈123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101us">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈的应用2">
+<meta property="og:url" content="https://2206411193.github.io/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A82/index.html">
 <meta property="og:site_name" content="邱智斌的个人博客">
-<meta property="og:description" content="本站是邱智斌的个人分享博客">
+<meta property="og:description" content="共享栈123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101us">
+<meta property="article:published_time" content="2020-07-19T03:35:00.000Z">
+<meta property="article:modified_time" content="2020-07-19T03:36:41.790Z">
 <meta property="article:author" content="邱智斌">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="区块链，数据结构，算法，python">
@@ -194,69 +196,158 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-栈的应用2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/22/%E7%94%A8java%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8C%BA%E5%9D%97%E9%93%BE/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/22/%E7%94%A8java%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8C%BA%E5%9D%97%E9%93%BE/">用java创建第一条区块链</a>
-	
+    <h1 class="article-title" itemprop="name">
+      栈的应用2
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">BlockChain</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A82/" class="archive-article-date">
+        <time datetime="2020-07-19T03:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+</a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">574字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
   
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxsize 5</span></span><br><span class="line"><span class="comment">//数组代替栈</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Stack</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> ele[maxsize] = &#123;<span class="number">0</span>&#125;; <span class="comment">//共享栈</span></span><br><span class="line">	<span class="keyword">int</span> top[<span class="number">2</span>];  <span class="comment">//两个栈的栈顶指针</span></span><br><span class="line">&#125;Stack;</span><br><span class="line"><span class="comment">//进栈</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">push</span><span class="params">(Stack*&amp; s, <span class="keyword">int</span> stNo, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s-&gt;top[<span class="number">0</span>] + <span class="number">1</span> &lt; s-&gt;top[<span class="number">1</span>]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (stNo == <span class="number">0</span>) &#123;</span><br><span class="line">			++(s-&gt;top[<span class="number">0</span>]);</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">0</span>]] = x;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">"入s1栈,"</span> &lt;&lt; <span class="string">"此时s1栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (stNo == <span class="number">1</span>) &#123;</span><br><span class="line">			--(s-&gt;top[<span class="number">1</span>]);</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">1</span>]] = x;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">"入s2栈,"</span> &lt;&lt; <span class="string">"此时s2栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"入栈序号输入有误"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"此时s1栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">0</span>] &lt;&lt; <span class="string">"。此时s2栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">1</span>]&lt;&lt;<span class="string">"共享栈满"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">(Stack*&amp; s, <span class="keyword">int</span> stNO, <span class="keyword">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (stNO == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s-&gt;top[<span class="number">0</span>] != <span class="number">-1</span>) &#123;</span><br><span class="line">			x = s-&gt;ele[s-&gt;top[<span class="number">0</span>]];</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">0</span>]] = <span class="number">0</span>;</span><br><span class="line">			s-&gt;top[<span class="number">0</span>]--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"s0栈已经为空，不能继续出栈"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (stNO == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s-&gt;top[<span class="number">1</span>] != maxsize) &#123;</span><br><span class="line">			x = s-&gt;ele[s-&gt;top[<span class="number">1</span>]];</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">1</span>]] = <span class="number">0</span>;</span><br><span class="line">			s-&gt;top[<span class="number">1</span>]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"s1栈已经为空，不能继续出栈"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"出栈序号输入有误"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	    Stack c;</span><br><span class="line">		Stack* s = &amp;c;</span><br><span class="line">		s-&gt;top[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">		s-&gt;top[<span class="number">1</span>] = maxsize;</span><br><span class="line">		</span><br><span class="line">	    <span class="keyword">int</span> OpNo;</span><br><span class="line">	    <span class="keyword">int</span> stNo;</span><br><span class="line">		<span class="keyword">int</span> x;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择您要进行的操作(0:push 1:pop 2:print):"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; OpNo;</span><br><span class="line">			<span class="keyword">if</span> (OpNo == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"您选择了进栈操作，请输入栈的序号:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; stNo;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入栈值:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">				push(s, stNo, x);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (OpNo == <span class="number">1</span>) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"您选择了出栈操作，请输入栈的序号:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; stNo;</span><br><span class="line">				pop(s, stNo, x);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (OpNo == <span class="number">2</span>) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"共享栈内容如下:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; maxsize;i++) &#123;</span><br><span class="line">					<span class="built_in">cout</span> &lt;&lt; s-&gt;ele[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; maxsize;i++) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; s-&gt;ele[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
 
     
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/04/page/6/">Prev</a><a class="page-number" href="/archives/2020/04/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2020/04/page/5/">5</a><a class="page-number" href="/archives/2020/04/page/6/">6</a><span class="page-number current">7</span>
-    </nav>
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          邱智斌
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://2206411193.github.io/2020/07/19/栈的应用2/" title="栈的应用2" target="_blank">https://2206411193.github.io/2020/07/19/栈的应用2/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
   
+    <a href="/2020/07/19/%E6%8C%87%E9%92%88%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          指针理解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">栈的应用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#共享栈"><span class="toc-number">1.</span> <span class="toc-text">共享栈</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -301,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: 'true',
 		isHome: 'false',
-		isPost: 'false',
-		isArchive:'true',
+		isPost: 'true',
+		isArchive:'false',
 		isTag: 'false',
 		isCategory: 'false',
 		open_in_new: 'false',

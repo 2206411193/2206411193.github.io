@@ -200,6 +200,220 @@
             
 
   
+    <article id="post-跨平台发布博客方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/22/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%A1%88/">hexo搭建之史上最快最高效可跨平台0成本(原创方法)</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/22/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%A1%88/" class="archive-article-date">
+        <time datetime="2020-04-22T07:52:46.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>要搭建个人博客的想法已经很久了，网上的教程有很多。无非以下几种：</p>
+<ul>
+<li>github Page搭建</li>
+<li>gitee Page 搭建</li>
+<li>在自己的Linux服务器利用tomcat或者nginx搭建<br>上述三种方案中有各自有其缺点：</li>
+<li>github搭建博客是使用人数最多的，但是github服务器在国外，访问速度慢是硬伤。</li>
+<li>gitee访问速度较快但是需要会员(money)才能绑定域名和自动更新。</li>
+<li>在Linux上搭建，多是用了git速度较慢，而且服务器没有图形界面，博客的源文件只能放在本地的电脑上，手机或者ipad写文章几乎是不可能。</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>利用坚果云(同步)+nginx（windows服务器）取消hexo部署（hexo deploy），自动更新博客,在本地windows上仅需hexo g然后大约1s左右打开你的域名或者IP即可发现文章已经更新,而且支持多设备发布博客，这几乎是其他方案都做不到的。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>hexo 是静态网站，原理就是写好markdown文件后，hexo g编译生成静态文件，把整个源文件同时放到本地和服务器上，这时，仅需把生成的文件目录在本地和服务器进行文件同步即可，这里我用的是坚果云进行同步，免费版完全够用。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>本地：windows,vscode(用来写markdown),坚果云<br>服务器：windows,vscode(ipad可以远程控制服务器用来写markdown)，坚果云</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>1.在本地安装hexo,需要nodejs环境（这一步网上教程一堆，自行度娘）<br>2.在服务器安装hexo(从本地电脑把整个源文件复制进服务器即可）,需要nodejs环境（同上一步）,下载nginx<br>3.将本地的hexo目录下的public,以及sources文件夹下的_post文件夹用坚果云进行同步<br>4.将服务器端hexo g的输出目录调到nginx网站的html<br>5.服务器端将public文件同步到上一步的位置(本地生成的静态页面直接同步到nginx,所以速度快，省掉了hexo d),将_post文件夹同步到服务器端的_post文件夹(保证本地和服务器所有的文章一致，这样无论是在本地发布文章，还是在ipad，或者是服务器发布，你的博客文件都是一致的)</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试一：<br>本地写md文件test.md，测试服务器对应文件夹下是否新增test.md<br>测试二：<br>本地写好test.md后，hexo g。<br>(1)打开 远程服务器浏览器，输入localhost查看新增文章是否显示。<br>(2)本地打开浏览器访问服务器域名或者ip查看文章是否更新。</p>
+<h2 id="成本分析"><a href="#成本分析" class="headerlink" title="成本分析"></a>成本分析</h2><ul>
+<li>服务器 学生免费领半年0rmb</li>
+<li>域名 9元一年（可以不用，因为还得备案，忒麻烦）</li>
+<li>坚果云 免费</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后流程：<br>windows本地：</p>
+<ul>
+<li>写博客</li>
+<li>hexo g</li>
+</ul>
+<hr>
+<p>服务器：</p>
+<ul>
+<li>利用远程连接软件连接到服务器</li>
+<li>写博客</li>
+<li>hexo g</li>
+</ul>
+<hr>
+<p>手机或者ipad:</p>
+<ul>
+<li>写好博客上传到坚果云的相应目录下（会自动同步到服务器）</li>
+<li>连接服务器桌面</li>
+<li>hexo g</li>
+</ul>
+<hr>
+<p>简单好用不解释。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/22/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%A1%88/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-解决idea maven下载慢的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/22/%E8%A7%A3%E5%86%B3idea%20maven%E4%B8%8B%E8%BD%BD%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/">解决idea maven下载慢的问题</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/22/%E8%A7%A3%E5%86%B3idea%20maven%E4%B8%8B%E8%BD%BD%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+        <time datetime="2020-04-22T07:52:46.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li>在pom.xml中添加maven 依赖包时，我就发现不管是否用了FQ，下载速度都好慢，就1M的东西能下半天，很是苦恼，于是到网上搜资料，然后让我查到了。说是使用阿里的maven镜像就可以了。我于是亲自试了下，速度快的飞起！！！</li>
+</ul>
+<p>右键项目选中maven选项，然后选择“open settings.xml”或者 “create settings.xml”，然后把如下代码粘贴进去就可以了。重启IDE。</p>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">idea</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/22/%E8%A7%A3%E5%86%B3idea%20maven%E4%B8%8B%E8%BD%BD%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-记录心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1039,181 +1253,6 @@
 
 
   
-    <article id="post-ps" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/ps/">PS记录</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/ps/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>一。调整灰度，使图片变亮变清晰适用于图片雾蒙蒙的情况。<br>方法：<br>1.RGB三通道法 分解调节人，r,g,b至合适位置（不为空）。<br>2.加黑去灰法，右下角可选颜色选择主要颜色拖动即可，加黑可使颜色清晰。<br>3.调色加混合模式。 柔光可去灰。<br>4.HDR(风景图，人像，静物) （大头像不可以）合并图层-&gt;图像-&gt;调整-&gt;HDR色调-&gt;添加细节<br>二。修复污点，水印，痘痘<br>1.复工具-&gt;修补工具-&gt;圈住要修复的位置-&gt;拖动至想要修复成的背景位置松开。<br>2.图章工具 选中图章工具-&gt;按alt取色-&gt;对要修复的位置进行涂抹。（不融合）<br>3.内容识别 选中要修复的位置-&gt;编辑-&gt;填充-&gt;内容识别。（小范围）效果不好可以多次填充</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ps</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/ps/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-leetcode双指针7道题目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/leetcode%E5%8F%8C%E6%8C%87%E9%92%887%E9%81%93%E9%A2%98%E7%9B%AE/">leetcode双指针7道题目</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/leetcode%E5%8F%8C%E6%8C%87%E9%92%887%E9%81%93%E9%A2%98%E7%9B%AE/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.453Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="167-Two-Sum-II-Input-array-is-sorted-Easy"><a href="#167-Two-Sum-II-Input-array-is-sorted-Easy" class="headerlink" title="167 Two Sum II - Input array is sorted (Easy)"></a>167 Two Sum II - Input array is sorted (Easy)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: numbers=&#123;<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>&#125;, target=<span class="number">9</span></span><br><span class="line">Output: index1=<span class="number">1</span>, index2=<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p> 题目描述：在有序数组中找出两个数，使它们的和为 target。</p>
-<h3 id="633-Sum-of-Square-Numbers-Easy"><a href="#633-Sum-of-Square-Numbers-Easy" class="headerlink" title="633 Sum of Square Numbers (Easy)"></a>633 Sum of Square Numbers (Easy)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: <span class="number">5</span></span><br><span class="line">Output: True</span><br><span class="line">Explanation: <span class="number">1</span> * <span class="number">1</span> + <span class="number">2</span> * <span class="number">2</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure>
-<p>题目描述：判断一个非负整数是否为两个整数的平方和。<br>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/leetcode%E5%8F%8C%E6%8C%87%E9%92%887%E9%81%93%E9%A2%98%E7%9B%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/"> Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next</a>
@@ -1355,10 +1394,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">wx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
@@ -1379,7 +1414,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">wx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1391,55 +1434,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1455,7 +1450,59 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">App</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">考研</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://2206411193.github.io">
-  <title>邱智斌的个人博客</title>
+  <title>KMP算法-next,nextval手动求法 | 邱智斌的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="本站是邱智斌的个人分享博客">
-  
-  <meta name="description" content="本站是邱智斌的个人分享博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邱智斌的个人博客">
-<meta property="og:url" content="https://2206411193.github.io/index.html">
+  <meta name="description" content="KMP算法-next,nextval手动求法设模式串为ababaa，求其nextval第一步求nextnext存在的意义就是当前字符不匹配，不必完全从头开始重新匹配，仅需从前面对称位置的下一个字符开始匹配即可。此时匹配串c与模式串d不匹配。非KMP算法会将模式串向后移动一位再次匹配。kmp算法因为next[D] &#x3D; 3所以仅需将第三位与匹配串当前位置对齐即可。 next的手动求法 第一步 第一个元">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KMP算法-next,nextval手动求法">
+<meta property="og:url" content="https://2206411193.github.io/2020/07/22/KMP%E7%AE%97%E6%B3%95-next-nextval%E6%89%8B%E5%8A%A8%E6%B1%82%E6%B3%95/index.html">
 <meta property="og:site_name" content="邱智斌的个人博客">
-<meta property="og:description" content="本站是邱智斌的个人分享博客">
+<meta property="og:description" content="KMP算法-next,nextval手动求法设模式串为ababaa，求其nextval第一步求nextnext存在的意义就是当前字符不匹配，不必完全从头开始重新匹配，仅需从前面对称位置的下一个字符开始匹配即可。此时匹配串c与模式串d不匹配。非KMP算法会将模式串向后移动一位再次匹配。kmp算法因为next[D] &#x3D; 3所以仅需将第三位与匹配串当前位置对齐即可。 next的手动求法 第一步 第一个元">
+<meta property="og:image" content="https://img-blog.csdn.net/20151023210839084">
+<meta property="og:image" content="https://img-blog.csdn.net/20151023210947449">
+<meta property="article:published_time" content="2020-07-22T09:29:00.000Z">
+<meta property="article:modified_time" content="2020-07-22T10:11:59.500Z">
 <meta property="article:author" content="邱智斌">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="区块链，数据结构，算法，python">
-<meta property="article:tag" content="JavaWeb">
-<meta property="article:tag" content="技术">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="考研">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20151023210839084">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -197,25 +197,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-KMP算法-next-nextval手动求法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-KMP算法-next-nextval手动求法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/22/KMP%E7%AE%97%E6%B3%95-next-nextval%E6%89%8B%E5%8A%A8%E6%B1%82%E6%B3%95/">KMP算法-next,nextval手动求法</a>
-	
+    <h1 class="article-title" itemprop="name">
+      KMP算法-next,nextval手动求法
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/07/22/KMP%E7%AE%97%E6%B3%95-next-nextval%E6%89%8B%E5%8A%A8%E6%B1%82%E6%B3%95/" class="archive-article-date">
         <time datetime="2020-07-22T09:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
 </a>
@@ -223,6 +223,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">517字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -258,6 +279,23 @@
     
 
     
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          邱智斌
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://2206411193.github.io/2020/07/22/KMP算法-next-nextval手动求法/" title="KMP算法-next,nextval手动求法" target="_blank">https://2206411193.github.io/2020/07/22/KMP算法-next-nextval手动求法/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
 
   </div>
   <div class="article-info article-info-index">
@@ -281,16 +319,24 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/22/KMP%E7%AE%97%E6%B3%95-next-nextval%E6%89%8B%E5%8A%A8%E6%B1%82%E6%B3%95/">展开全文 >></a>
-    </p>
-    
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/19/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符串的一般操作</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -305,818 +351,33 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-字符串的一般操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/19/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/">字符串的一般操作</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/19/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-        <time datetime="2020-07-19T11:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> *ch;</span><br><span class="line">	<span class="keyword">int</span> length;</span><br><span class="line">&#125;Str;</span><br><span class="line"><span class="comment">//字符串赋值 包含‘/0’</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strassign</span><span class="params">(Str&amp; str,  <span class="keyword">char</span>* ch)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (str.ch) <span class="built_in">free</span>(str.ch);</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>; </span><br><span class="line">	<span class="keyword">char</span> *c = ch;</span><br><span class="line">	<span class="keyword">while</span> (*c) &#123;  <span class="comment">//注意不要落了*</span></span><br><span class="line">		len++;</span><br><span class="line">		c++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">		str.ch = <span class="literal">NULL</span>;</span><br><span class="line">		str.length = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		str.ch = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * (len + <span class="number">1</span>));</span><br><span class="line">		<span class="keyword">if</span> (str.ch == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			c = ch; <span class="comment">//指针移到开始部分</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= len;i++,c++) &#123;   <span class="comment">//包含进/0</span></span><br><span class="line">				str.ch[i] = *c;</span><br><span class="line">			&#125;</span><br><span class="line">			str.length = len;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取字符串长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strLength</span><span class="params">(Str str)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//串比较</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(Str str1, Str str2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; str1.length &amp;&amp; i &lt; str2.length;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (str1.ch[i] != str2.ch[i]) <span class="keyword">return</span> str1.ch[i] - str1.ch[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> str1.length - str2.length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//字符串拼接</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">concat</span><span class="params">(Str&amp; str, Str s1, Str s2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (str.ch) &#123;</span><br><span class="line">		<span class="built_in">free</span>(str.ch);</span><br><span class="line">		str.ch = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	str.ch = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * (s1.length + s2.length + <span class="number">1</span>));</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; s1.length) &#123;</span><br><span class="line">		str.ch[i] = s1.ch[i];</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//包含/0</span></span><br><span class="line">	<span class="keyword">while</span> (j &lt;= s2.length) &#123;</span><br><span class="line">		str.ch[i+j] = s2.ch[j];</span><br><span class="line">		++j;</span><br><span class="line">	&#125;</span><br><span class="line">	str.length = s1.length + s2.length;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取子串</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">substring</span><span class="params">(Str&amp; substr, Str str, <span class="keyword">int</span> pos, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (pos&lt;<span class="number">0</span> || pos &gt;= str.length || len&gt;str.length-pos || len &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">if</span> (substr.ch) &#123;</span><br><span class="line">		<span class="built_in">free</span>(substr.ch);</span><br><span class="line">		substr.ch = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">		substr.ch = <span class="literal">NULL</span>;</span><br><span class="line">		substr.length = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		substr.ch = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * (len + <span class="number">1</span>));</span><br><span class="line">		<span class="keyword">if</span> (substr.ch == <span class="literal">NULL</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">int</span> i = pos;</span><br><span class="line">		<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (i&lt;pos+len)</span><br><span class="line">		&#123;</span><br><span class="line">			substr.ch[j] = str.ch[i];</span><br><span class="line">			++i;++j;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		substr.ch[i] = <span class="string">'\0'</span>;</span><br><span class="line">		substr.length = len;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStr</span><span class="params">(Str str)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (i &lt; str.length) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; str.ch[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Str str;</span><br><span class="line">	Str s1, s2;</span><br><span class="line">	<span class="keyword">char</span> x1[<span class="number">5</span>] = <span class="string">"abcd"</span>;</span><br><span class="line">	s1.ch = x1;</span><br><span class="line">	s2.ch = <span class="string">"efgk"</span>;</span><br><span class="line">	s1.length = <span class="number">4</span>;</span><br><span class="line">	s2.length = <span class="number">4</span>;</span><br><span class="line">	str.ch = <span class="literal">NULL</span>;</span><br><span class="line">	str.length = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//concat(str, s1, s2);</span></span><br><span class="line">	<span class="keyword">int</span> res = substring(s1, s2, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">	<span class="comment">//cout &lt;&lt; s2.length;</span></span><br><span class="line">	printStr(s1);</span><br><span class="line">	<span class="comment">//int res = strassign(str, "abc d");</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/19/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#KMP算法-next-nextval手动求法"><span class="toc-number">1.</span> <span class="toc-text">KMP算法-next,nextval手动求法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设模式串为ababaa，求其nextval"><span class="toc-number">1.1.</span> <span class="toc-text">设模式串为ababaa，求其nextval</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步求next"><span class="toc-number">1.1.1.</span> <span class="toc-text">第一步求next</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#next的手动求法"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">next的手动求法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步求nextval"><span class="toc-number">1.1.2.</span> <span class="toc-text">第二步求nextval</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nextval的手动求法"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">nextval的手动求法</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
 
-  
-    <article id="post-排序算法集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/">排序算法集合</a>
-	
-    </h1>
-  
 
 
-  
-  
-<a href="/2020/07/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/" class="archive-article-date">
-        <time datetime="2020-07-19T03:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
 
-  
-  
-    
 
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>总结一下考研中常见的排序算法c++实现</p>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">begin</span> &lt; <span class="built_in">end</span>) &#123;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[<span class="built_in">begin</span>];</span><br><span class="line">		<span class="keyword">int</span> i = <span class="built_in">begin</span>;</span><br><span class="line">		<span class="keyword">int</span> j = <span class="built_in">end</span>;</span><br><span class="line">		<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">			<span class="keyword">while</span> (i&lt;j &amp;&amp; arr[j]&gt;temp) j--;</span><br><span class="line">			arr[i] = arr[j];</span><br><span class="line">			<span class="keyword">while</span> (i &lt; j &amp;&amp; arr[i] &lt;= temp) i++;</span><br><span class="line">			arr[j] = arr[i];</span><br><span class="line">		&#125;</span><br><span class="line">		arr[i] = temp;</span><br><span class="line">		quickSort(arr, <span class="built_in">begin</span>, i);</span><br><span class="line">		quickSort(arr, i + <span class="number">1</span>, <span class="built_in">end</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2>
-    
 
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-指针理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/19/%E6%8C%87%E9%92%88%E7%90%86%E8%A7%A3/">指针理解</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/19/%E6%8C%87%E9%92%88%E7%90%86%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-07-19T03:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="指针常识"><a href="#指针常识" class="headerlink" title="指针常识"></a>指针常识</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ConsoleApplication1.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//结构体练习</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BTNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BTNode</span> *<span class="title">lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BTNode</span> *<span class="title">rchild</span>;</span></span><br><span class="line">&#125;BTNode;</span><br><span class="line"><span class="comment">//    int* a = p;</span></span><br><span class="line"><span class="comment">//    int b = *a;</span></span><br><span class="line"><span class="comment">//    //    ......</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//int ff(int* p) &#123;</span></span><br><span class="line"><span class="comment">//int main() &#123;</span></span><br><span class="line"><span class="comment">//    int b = 3;</span></span><br><span class="line"><span class="comment">//    ff(&amp;b);</span></span><br><span class="line"><span class="comment">//    //  ......</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//这是一个伪函数，主要用来说明调用函数的指针传参* p, 根据调用参数的声明，我们知道这个传参指针为一个整型指针传参，也就是说p主要用于传输地址用的。</span></span><br><span class="line"><span class="comment">//你在看这里的时候或许会对这个“* ”感到特别迷惑，给你大概解释一下：“int* a”中的“* ”是表示声明的a是一个整型指针变量，传参p中的“* ”也是这样的，只不过他们一个是传参，一个是局部变量罢了。接下来的“int b = *a”中的“ * ”则是取值的意思了，意思就是取出指针变量a中的值，好的！那么这个a中的值是多少呢？从主函数开始看：主函数中定义一个局部的整数型变量b, 这里b被赋值为3，通过调用子函数“ff(&amp;b)”来看，“&amp; b”则表示取了b的地址。好！这是“&amp; ”的作用。接下来子函数ff就把b的地址传给了指针传参p。最后举个小例子：快递员B从快递员A的手中接到了快递并送给你。快递员只需要传送快递——“&amp; （取地址）”而不需要拆开快递看看里边是啥，当你收到快递后打开快递——“* （取值）”后拿出东西使用。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exchange</span><span class="params">(BTNode *a,BTNode &amp;b,BTNode *&amp;c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = a-&gt;data;</span><br><span class="line">    a-&gt;data = b.data;</span><br><span class="line">    b.data = temp;</span><br><span class="line">    c-&gt;data = a-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exchange2</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    BTNode *btNode1, *btNode3;</span><br><span class="line">    BTNode  btNode2;</span><br><span class="line">    btNode1 = (BTNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BTNode));</span><br><span class="line">    btNode3 = (BTNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BTNode));</span><br><span class="line">    btNode1-&gt;data = <span class="number">5</span>; <span class="comment">//指针用箭头</span></span><br><span class="line">    btNode2.data = <span class="number">3</span>;  <span class="comment">//结构体用.</span></span><br><span class="line">    <span class="comment">//exchange(btNode1, btNode2,btNode3);</span></span><br><span class="line">    <span class="comment">//std::cout &lt;&lt;(*btNode1).data;</span></span><br><span class="line">    exchange2((*btNode1).data,btNode2.data);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; btNode1-&gt;data;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt;btNode2.data;</span><br><span class="line">  <span class="comment">/*  std::cout &lt;&lt; btNode3-&gt;data;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/19/%E6%8C%87%E9%92%88%E7%90%86%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-栈的应用2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A82/">栈的应用2</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A82/" class="archive-article-date">
-        <time datetime="2020-07-19T03:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxsize 5</span></span><br><span class="line"><span class="comment">//数组代替栈</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Stack</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> ele[maxsize] = &#123;<span class="number">0</span>&#125;; <span class="comment">//共享栈</span></span><br><span class="line">	<span class="keyword">int</span> top[<span class="number">2</span>];  <span class="comment">//两个栈的栈顶指针</span></span><br><span class="line">&#125;Stack;</span><br><span class="line"><span class="comment">//进栈</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">push</span><span class="params">(Stack*&amp; s, <span class="keyword">int</span> stNo, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s-&gt;top[<span class="number">0</span>] + <span class="number">1</span> &lt; s-&gt;top[<span class="number">1</span>]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (stNo == <span class="number">0</span>) &#123;</span><br><span class="line">			++(s-&gt;top[<span class="number">0</span>]);</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">0</span>]] = x;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">"入s1栈,"</span> &lt;&lt; <span class="string">"此时s1栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (stNo == <span class="number">1</span>) &#123;</span><br><span class="line">			--(s-&gt;top[<span class="number">1</span>]);</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">1</span>]] = x;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">"入s2栈,"</span> &lt;&lt; <span class="string">"此时s2栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"入栈序号输入有误"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"此时s1栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">0</span>] &lt;&lt; <span class="string">"。此时s2栈顶下标为"</span> &lt;&lt; s-&gt;top[<span class="number">1</span>]&lt;&lt;<span class="string">"共享栈满"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">(Stack*&amp; s, <span class="keyword">int</span> stNO, <span class="keyword">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (stNO == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s-&gt;top[<span class="number">0</span>] != <span class="number">-1</span>) &#123;</span><br><span class="line">			x = s-&gt;ele[s-&gt;top[<span class="number">0</span>]];</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">0</span>]] = <span class="number">0</span>;</span><br><span class="line">			s-&gt;top[<span class="number">0</span>]--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"s0栈已经为空，不能继续出栈"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (stNO == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s-&gt;top[<span class="number">1</span>] != maxsize) &#123;</span><br><span class="line">			x = s-&gt;ele[s-&gt;top[<span class="number">1</span>]];</span><br><span class="line">			s-&gt;ele[s-&gt;top[<span class="number">1</span>]] = <span class="number">0</span>;</span><br><span class="line">			s-&gt;top[<span class="number">1</span>]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"s1栈已经为空，不能继续出栈"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"出栈序号输入有误"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	    Stack c;</span><br><span class="line">		Stack* s = &amp;c;</span><br><span class="line">		s-&gt;top[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">		s-&gt;top[<span class="number">1</span>] = maxsize;</span><br><span class="line">		</span><br><span class="line">	    <span class="keyword">int</span> OpNo;</span><br><span class="line">	    <span class="keyword">int</span> stNo;</span><br><span class="line">		<span class="keyword">int</span> x;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择您要进行的操作(0:push 1:pop 2:print):"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; OpNo;</span><br><span class="line">			<span class="keyword">if</span> (OpNo == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"您选择了进栈操作，请输入栈的序号:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; stNo;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入栈值:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">				push(s, stNo, x);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (OpNo == <span class="number">1</span>) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"您选择了出栈操作，请输入栈的序号:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; stNo;</span><br><span class="line">				pop(s, stNo, x);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (OpNo == <span class="number">2</span>) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"共享栈内容如下:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; maxsize;i++) &#123;</span><br><span class="line">					<span class="built_in">cout</span> &lt;&lt; s-&gt;ele[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; maxsize;i++) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; s-&gt;ele[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A82/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-栈的应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">栈的应用</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/" class="archive-article-date">
-        <time datetime="2020-07-19T03:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 99;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Op</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">char</span> op, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'+'</span>) <span class="keyword">return</span> a + b;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'*'</span>) <span class="keyword">return</span> a * b;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'-'</span>) <span class="keyword">return</span> a - b;</span><br><span class="line">	<span class="keyword">if</span> (op == <span class="string">'/'</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"除数不为0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> a / b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//后缀表达式</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculate</span><span class="params">(<span class="keyword">char</span> s[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> Stack[<span class="number">99</span>];</span><br><span class="line">	<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;s[i] != <span class="string">'\0'</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] &gt;= <span class="string">'0'</span> &amp;&amp; s[i] &lt;= <span class="string">'9'</span>) &#123;</span><br><span class="line">			Stack[++top] = s[i] - <span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			Stack[++top] = Op(Stack[top--], s[i], Stack[top--]);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Stack[top];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="括号匹配"><a href="#括号匹配" class="headerlink" title="括号匹配"></a>括号匹配</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//括号匹配</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">match</span><span class="params">(<span class="keyword">char</span> s[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">char</span> Stack[<span class="number">99</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;s[i] != <span class="string">'\0'</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] == <span class="string">'('</span>) Stack[++top] = s[i];</span><br><span class="line">		<span class="keyword">if</span> (s[i] == <span class="string">')'</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (top == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			top--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="keyword">if</span> (top == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> s[] = <span class="string">"24*8+"</span>;</span><br><span class="line">	<span class="keyword">char</span> s1[] = <span class="string">"((((df45)df)df)"</span>;</span><br><span class="line">	<span class="keyword">int</span> res = calculate(s);</span><br><span class="line">	<span class="comment">//cout &lt;&lt; res;</span></span><br><span class="line">	<span class="keyword">if</span>(!match(s1))</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"不匹配"</span>;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"匹配"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/19/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-链表的操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/18/%E9%93%BE%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">链表的操作</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/18/%E9%93%BE%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-        <time datetime="2020-07-18T13:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 单链表结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Element;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> &#123;</span></span><br><span class="line">	Element data;</span><br><span class="line">	LNode* next;</span><br><span class="line">&#125;LNode;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 尾插法建立链表</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createListByTail</span><span class="params">(LNode *&amp;c, Element a[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	LNode *s,*r;</span><br><span class="line">	<span class="comment">//让c永远代表链表头，s变量代表新的节点，r永远代表链表尾</span></span><br><span class="line">	c = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">	c-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	r = c;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">			r-&gt;data = a[i];</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		s = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">		s-&gt;data = a[i];</span><br><span class="line">		r-&gt;next = s;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	r-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//头插法建立链表</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createListByHead</span><span class="params">(LNode*&amp; c, Element a[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">///区别于尾插法，因为头插法最后一个插入的元素为链表头所以不需要再找一个指针跟着移动。</span></span><br><span class="line">	c = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">	c-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	LNode* s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">			c-&gt;data = a[i];</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		s = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">		s-&gt;data = a[i];</span><br><span class="line">		s-&gt;next = c;</span><br><span class="line">		c = s;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 遍历单链表</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printLNode</span><span class="params">(LNode *c)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (c!= <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; c-&gt;data &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		c = c-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//向链表某个位置添加元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddNodeToLink</span><span class="params">(LNode *&amp;c, <span class="keyword">int</span> pos,<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (pos &lt;= <span class="number">0</span>||c==<span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">	LNode * s = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">	s-&gt;data = value;</span><br><span class="line">	s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	LNode* r = c;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (pos == <span class="number">1</span>) &#123;</span><br><span class="line">		s-&gt;next = r;</span><br><span class="line">		c = s;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; pos<span class="number">-1</span> &amp;&amp; r-&gt;next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (r-&gt;next == <span class="literal">NULL</span>) &#123;</span><br><span class="line">		r-&gt;next = s;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	s-&gt;next = r-&gt;next;</span><br><span class="line">	r-&gt;next = s;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//把链表中某个位置的值删除</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleteNodeFromLink</span><span class="params">(LNode *&amp;c,<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">	LNode* r,*j;</span><br><span class="line">	<span class="keyword">if</span> (pos &lt; <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span> (pos == <span class="number">1</span>) &#123;</span><br><span class="line">		r = c-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(c);</span><br><span class="line">		c = r;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	r = c;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; pos<span class="number">-1</span>&amp;&amp; c!=<span class="literal">NULL</span>) &#123;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (i == pos - <span class="number">1</span>) &#123;</span><br><span class="line">		j = r-&gt;next;</span><br><span class="line">		r-&gt;next = j-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 快速排序算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(Element* arr, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">begin</span>&lt;<span class="built_in">end</span>)&#123;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[<span class="built_in">begin</span>];</span><br><span class="line">		<span class="keyword">int</span> i = <span class="built_in">begin</span>;</span><br><span class="line">		<span class="keyword">int</span> j = <span class="built_in">end</span>;</span><br><span class="line">		<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">			<span class="keyword">while</span> (i&lt;j &amp;&amp; arr[j]&gt;temp) j--;</span><br><span class="line">			arr[i] = arr[j];</span><br><span class="line">			<span class="keyword">while</span> (i &lt; j &amp;&amp; arr[i] &lt;= temp) i++;</span><br><span class="line">			arr[j] = arr[i];</span><br><span class="line">		&#125;</span><br><span class="line">		arr[i] = temp;</span><br><span class="line">		quickSort(arr, <span class="built_in">begin</span>, i);</span><br><span class="line">		quickSort(arr, i + <span class="number">1</span>, <span class="built_in">end</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//逆序数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverseArr</span><span class="params">(Element arr[])</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">4</span>;i &lt; j;i++, j--) &#123;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[i];</span><br><span class="line">		arr[i] = arr[j];</span><br><span class="line">		arr[j] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Element a[<span class="number">5</span>] = &#123; <span class="number">5</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">2</span> &#125;;</span><br><span class="line">	Element b[<span class="number">5</span>] = &#123; <span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">6</span> &#125;;</span><br><span class="line">	quickSort(a, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">	quickSort(b, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">	reverseArr(b);</span><br><span class="line">	<span class="comment">//测试尾插法</span></span><br><span class="line">	LNode* c1,*c2;</span><br><span class="line">	<span class="comment">//createListByTail(c1, a, 5);</span></span><br><span class="line">	<span class="comment">//printLNode(c1);</span></span><br><span class="line">	createListByHead(c2, b, <span class="number">5</span>);</span><br><span class="line">	AddNodeToLink(c2,<span class="number">1</span>,<span class="number">999</span>);</span><br><span class="line">	printLNode(c2);</span><br><span class="line">	deleteNodeFromLink(c2, <span class="number">1</span>);</span><br><span class="line">	printLNode(c2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/18/%E9%93%BE%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信小程序实现登录以及对应服务器代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%A3%E7%A0%81/">基于区块链的处方系统--微信小程序实现登录以及对应服务器代码</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%A3%E7%A0%81/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h1><h3 id="微信小程序端wxml相当于html"><a href="#微信小程序端wxml相当于html" class="headerlink" title="微信小程序端wxml相当于html"></a>微信小程序端wxml相当于html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">bindsubmit</span>=<span class="string">"formSubmit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">placeholder</span>=<span class="string">"身份证:"</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">password</span>=<span class="string">"true"</span> <span class="attr">placeholder</span>=<span class="string">"密码:"</span> <span class="attr">name</span>=<span class="string">"pwd"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"margin-top:5px"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"primary"</span> <span class="attr">form-type</span>=<span class="string">"submit"</span> &gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="微信小程序端js，通过json提交到服务器。"><a href="#微信小程序端js，通过json提交到服务器。" class="headerlink" title="微信小程序端js，通过json提交到服务器。"></a>微信小程序端js，通过json提交到服务器。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">formSubmit:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> that  = <span class="keyword">this</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">  wx.request(&#123;</span><br><span class="line">    url: app.globalData.url+<span class="string">'user/login.do'</span>,</span><br><span class="line">    method: <span class="string">'POST'</span>,</span><br><span class="line">    header: &#123;</span><br><span class="line">      <span class="string">'content-type'</span>: <span class="string">'application/json'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    data:&#123;</span><br><span class="line">      id:e.detail.value.id,</span><br><span class="line">      pwd:e.detail.value.pwd,</span><br><span class="line">      role:<span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res);</span><br><span class="line">      <span class="keyword">var</span> list = res.data.list;</span><br><span class="line">      <span class="keyword">if</span> (list == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> toastText = <span class="string">'网络错误!'</span>;</span><br><span class="line">        wx.showToast(&#123;</span><br><span class="line">          title: toastText,</span><br><span class="line">          icon: <span class="string">''</span>,</span><br><span class="line">          duration: <span class="number">2000</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        that.setData(&#123;</span><br><span class="line">         id: res.data.id</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">wx</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">BlockChain</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%A3%E7%A0%81/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信小程序Picker巨坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FPicker%E5%B7%A8%E5%9D%91/">记录一个微信小程序的巨坑Picker</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FPicker%E5%B7%A8%E5%9D%91/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.607Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>暂时解决了这个问题，可能有bug</p>
-<h2 id="相关代码"><a href="#相关代码" class="headerlink" title="相关代码"></a>相关代码</h2><p>js文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">//微信巨坑，取不到对象的属性     设定ObjectArray</span></span><br><span class="line">    role: [&#123; <span class="attr">key</span>: <span class="string">'患者'</span>, <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'医生'</span>,<span class="attr">value</span>: <span class="number">2</span>&#125;,&#123;<span class="attr">key</span>:<span class="string">'药店'</span>,<span class="attr">value</span>: <span class="number">3</span>&#125;],</span><br><span class="line">    index:<span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line"> bindPickerChange: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'picker发送选择改变，携带值为'</span>, e.detail.value)</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      <span class="comment">//picker返回的数据是下标  微信巨坑</span></span><br><span class="line">      index: e.detail.value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>wxml文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">picker</span> <span class="attr">bindchange</span>=<span class="string">"bindPickerChange"</span> <span class="attr">name</span>=<span class="string">"role"</span> <span class="attr">range</span>=<span class="string">'&#123;&#123;role&#125;&#125;'</span> <span class="attr">range-key</span>=<span class="string">"key"</span> <span class="attr">value</span>=<span class="string">"&#123;&#123;role[index].value&#125;&#125;"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"picker"</span>&gt;</span></span><br><span class="line">     选择您的身份：&#123;&#123; role[index].key &#125;&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">picker</span>&gt;</span></span><br></pre></td></tr></table></figure>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">wx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FPicker%E5%B7%A8%E5%9D%91/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-桶排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/%E6%A1%B6%E6%8E%92%E5%BA%8F/">桶排序二题</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/%E6%A1%B6%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.596Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h1><p>适合元素值集合并不大的情况。<br>桶排序又叫箱排序，是计数排序的升级版，它的工作原理是将数组分到有限数量的桶子里，然后对每个桶子再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序），最后将各个桶中的数据有序的合并起来。</p>
-<p>计数排序是桶排序的一种特殊情况，可以把计数排序当成每个桶里只有一个元素的情况。网络中很多博文写的桶排序实际上都是计数排序，并非标准的桶排序，要注意辨别。</p>
-<h2 id="leetcode-347-Top-K-Frequent-Elements-Medium"><a href="#leetcode-347-Top-K-Frequent-Elements-Medium" class="headerlink" title="leetcode 347 Top K Frequent Elements (Medium)"></a>leetcode 347 Top K Frequent Elements (Medium)</h2><p>设置若干个桶，每个桶存储出现频率相同的数。桶的下标表示数出现的频率，即第 i 个桶中存储的数出现的频率为 i。</p>
-<p>把数都放到桶之后，从后向前遍历桶，最先得到的 k 个数就是出现频率最多的的 k 个数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        System.out.println(topKFrenquent(nums, <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">topKFrenquent</span><span class="params">(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; freenqucyForNum =  <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            <span class="comment">/*把数字和出现的频率保存到HashMap*/</span></span><br><span class="line">            freenqucyForNum.put(num, freenqucyForNum.getOrDefault(num, <span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt;[] buckets = <span class="keyword">new</span> ArrayList[nums.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> key :freenqucyForNum.keySet())&#123;</span><br><span class="line">            <span class="keyword">int</span> frequency = freenqucyForNum.get(key);</span><br><span class="line">            <span class="keyword">if</span>(buckets[frequency]==<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="comment">/*每一个频率都包含一些数字*/</span></span><br><span class="line">                buckets[frequency] = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/*每个桶存储频率相同的数*/</span></span><br><span class="line">            buckets[frequency].add(key);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; topK = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">/*从后向前遍历，直到第K个*/</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=buckets.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>&amp;&amp;topK.size()&lt;k;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(buckets[i]==<span class="keyword">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">/*如果该频率的数字的数目小于还剩下的个数,那就都放进topK*/</span></span><br><span class="line">            <span class="keyword">if</span>(buckets[i].size()&lt;=(k-topK.size()))</span><br><span class="line">            topK.addAll(buckets[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            <span class="comment">/*如果该频率的数字数目大于还剩下的数目那就截取前几个数字*/</span></span><br><span class="line">            topK.addAll(buckets[i].subList(<span class="number">0</span>, k-topK.size()));</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">return</span> topK;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="451-Sort-Characters-By-Frequency-Medium"><a href="#451-Sort-Characters-By-Frequency-Medium" class="headerlink" title="451. Sort Characters By Frequency (Medium)"></a>451. Sort Characters By Frequency (Medium)</h2><p>Input:<br>“tree”</p>
-<p>Output:<br>“eert”</p>
-<p>Explanation:<br>‘e’ appears twice while ‘r’ and ‘t’ both appear once.<br>So ‘e’ must appear before both ‘r’ and ‘t’. Therefore “eetr” is also a valid answer.</p>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">桶排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/%E6%A1%B6%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next</a>
-    </nav>
-  
 
 
           </div>
@@ -1160,8 +421,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: 'true',
-		isHome: 'true',
-		isPost: 'false',
+		isHome: 'false',
+		isPost: 'true',
 		isArchive:'false',
 		isTag: 'false',
 		isCategory: 'false',

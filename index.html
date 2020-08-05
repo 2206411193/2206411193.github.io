@@ -200,6 +200,148 @@
             
 
   
+    <article id="post-二叉树的遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">二叉树的四种遍历(递归+非递归)+深度，宽度</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
+        <time datetime="2020-08-03T05:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="二叉树的类型"><a href="#二叉树的类型" class="headerlink" title="二叉树的类型"></a>二叉树的类型</h2><ul>
+<li>满二叉树：所有分支节点均有左孩子节点和右孩子节点，叶子节点都集中在最下一层。</li>
+<li>完全二叉树：上层满了才有下一层，左面有了才有右面。</li>
+</ul>
+<hr>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><ul>
+<li>叶子节点数等于双分支节点数+1.（分支=分支，分支=节点-1）求解.</li>
+<li>第 i 层最多有2^(i-1)个节点。</li>
+<li>深度为 k的二叉树，节点数最多为2^k-1.</li>
+<li>左子树2i,右子树2i+1,父亲节点除2.</li>
+<li>天勤p138</li>
+</ul>
+<hr>
+<h3 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h3><ul>
+<li>顺序存储结构：优点：查找节点效率高。缺点：如果不是完全二叉树，浪费空间。</li>
+<li>链式存储结构<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BTNode</span> &#123;</span></span><br><span class="line">	Element data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">BTNode</span>* <span class="title">lchild</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">BTNode</span>* <span class="title">rchild</span>;</span></span><br><span class="line">&#125;BTNode;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><h4 id="创建一颗二叉树"><a href="#创建一颗二叉树" class="headerlink" title="创建一颗二叉树"></a>创建一颗二叉树</h4><p>中序创建二叉树。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createBT</span><span class="params">(BTNode *&amp;newTree,<span class="keyword">char</span> *ch,<span class="keyword">int</span> <span class="built_in">begin</span>,<span class="keyword">int</span> <span class="built_in">end</span>)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">begin</span> &gt; <span class="built_in">end</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> mid = <span class="built_in">begin</span> + (<span class="built_in">end</span> - <span class="built_in">begin</span>) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		newTree = (BTNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BTNode));</span><br><span class="line">		newTree-&gt;data = ch[mid];</span><br><span class="line">		newTree-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">		newTree-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">		createBT(newTree-&gt;lchild,ch,<span class="built_in">begin</span>,mid<span class="number">-1</span>);</span><br><span class="line">		createBT(newTree-&gt;rchild,ch,mid+<span class="number">1</span>,<span class="built_in">end</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h4><p>先序遍历：每遇到一个节点，先访问，然后再遍历其左右子树；<br>中序遍历：第一次经过时不访问，等遍历完左子树之后再访问，然后遍历右子树；<br>后序遍历：第一次和第二次经过时都不访问，等遍历完该节点的左右子树之后，最后访问该节点；</p>
+<ul>
+<li>注 访问次数的统计以补足叶子的节点的空孩子节点为计数。</li>
+</ul>
+<hr>
+<p>普通遍历路线图。<br><img src="http://data.biancheng.net/uploads/allimg/181229/2-1Q22920434Q44.gif" alt=""></p>
+<h5 id="先序遍历（递归"><a href="#先序遍历（递归" class="headerlink" title="先序遍历（递归)"></a>先序遍历（递归)</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(BTNode *p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		visit(p);</span><br><span class="line">		preOrder(p-&gt;lchild);</span><br><span class="line">		preOrder(p-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="中序遍历（递归）"><a href="#中序遍历（递归）" class="headerlink" title="中序遍历（递归）"></a>中序遍历（递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">	</span><br><span class="line">	    inOrder(p-&gt;lchild);</span><br><span class="line">		visit(p);</span><br><span class="line">		inOrder(p-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="后序遍历（递归）"><a href="#后序遍历（递归）" class="headerlink" title="后序遍历（递归）"></a>后序遍历（递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">	</span><br><span class="line">		postOrder(p-&gt;lchild);</span><br><span class="line">		postOrder(p-&gt;rchild);</span><br><span class="line">		visit(p);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="先序遍历（非递归"><a href="#先序遍历（非递归" class="headerlink" title="先序遍历（非递归)"></a>先序遍历（非递归)</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrderNonrecursion</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p) &#123;</span><br><span class="line">		BTNode* <span class="built_in">stack</span>[maxsize];</span><br><span class="line">		BTNode* q;</span><br><span class="line">		<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">		<span class="built_in">stack</span>[++top] = p;</span><br><span class="line">		<span class="comment">//根节点入栈，循环（出栈，访问，右孩子进栈，左孩子进栈）</span></span><br><span class="line">		<span class="keyword">while</span> (top != <span class="number">-1</span>) &#123;</span><br><span class="line">			q = <span class="built_in">stack</span>[top--];</span><br><span class="line">			visit(q);</span><br><span class="line">			<span class="keyword">if</span> (q-&gt;rchild) <span class="built_in">stack</span>[++top] = q-&gt;rchild;</span><br><span class="line">			<span class="keyword">if</span> (q-&gt;lchild) <span class="built_in">stack</span>[++top] = q-&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="中序遍历（非递归）"><a href="#中序遍历（非递归）" class="headerlink" title="中序遍历（非递归）"></a>中序遍历（非递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrderNonCursion</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p) &#123;</span><br><span class="line">		BTNode* <span class="built_in">stack</span>[maxsize];</span><br><span class="line">		BTNode* q;</span><br><span class="line">		<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">		q = p;</span><br><span class="line">		<span class="comment">//循环（循环（将当前节点所有左子树入栈），如果栈不为空，出栈访问，找右孩子节点入栈）</span></span><br><span class="line">		<span class="keyword">while</span> (top != <span class="number">-1</span> || q != <span class="literal">NULL</span>) &#123;</span><br><span class="line">			<span class="keyword">while</span>(q != <span class="literal">NULL</span>) &#123;</span><br><span class="line">				<span class="built_in">stack</span>[++top] = q;</span><br><span class="line">				q = q-&gt;lchild;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//出栈会出现栈空的情况（某个节点没有左子树）</span></span><br><span class="line">			<span class="keyword">if</span> (top != <span class="number">-1</span>) &#123;</span><br><span class="line">				q = <span class="built_in">stack</span>[top--];</span><br><span class="line">				visit(q);</span><br><span class="line">				q = q-&gt;rchild;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">stack</span>[++top] = p;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="后序遍历（非递归）"><a href="#后序遍历（非递归）" class="headerlink" title="后序遍历（非递归）"></a>后序遍历（非递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrderNonRecursion</span><span class="params">(BTNode* bt)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (bt) &#123;</span><br><span class="line">		BTNode* stack1[maxsize];</span><br><span class="line">		BTNode* stack2[maxsize];</span><br><span class="line">		<span class="keyword">int</span> top1, top2;</span><br><span class="line">		top1 = top2 = <span class="number">-1</span>;</span><br><span class="line">		BTNode* q = <span class="literal">NULL</span>;</span><br><span class="line">		stack1[++top1] = bt;</span><br><span class="line">		<span class="keyword">while</span> (top1 != <span class="number">-1</span>) &#123;</span><br><span class="line">			q = stack1[top1--];</span><br><span class="line">			stack2[++top2] = q;</span><br><span class="line">			<span class="comment">//两个栈结构，反向两次，所以先入左孩子，再入右孩子</span></span><br><span class="line">			<span class="keyword">if</span> (q-&gt;lchild!=<span class="literal">NULL</span>) stack1[++top1] = q-&gt;lchild;</span><br><span class="line">			<span class="keyword">if</span> (q-&gt;rchild!=<span class="literal">NULL</span>) stack1[++top1] = q-&gt;rchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (top2 != <span class="number">-1</span>) &#123;</span><br><span class="line">			q = stack2[top2--];</span><br><span class="line">			visit(q);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>层次遍历路线图<br><img src="http://data.biancheng.net/uploads/allimg/181229/2-1Q2292043234L.gif" alt=""></p>
+<h5 id="层次遍历（循环队列）"><a href="#层次遍历（循环队列）" class="headerlink" title="层次遍历（循环队列）"></a>层次遍历（循环队列）</h5><p>维持一个队列，当前节点进队，若队不为空，（出队，若有左孩子左孩子进队，若有右孩子，右孩子进队）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">level</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> front,rear;</span><br><span class="line">	BTNode *que[maxsize];</span><br><span class="line">	BTNode* q;</span><br><span class="line">	front = rear = <span class="number">0</span>;</span><br><span class="line">	rear = (rear + <span class="number">1</span>) % maxsize;</span><br><span class="line">	que[rear] = p;</span><br><span class="line">	<span class="keyword">while</span> (front != rear) &#123;</span><br><span class="line">		front = (front + <span class="number">1</span>) % maxsize;</span><br><span class="line">		q = que[front];</span><br><span class="line">		visit(q);</span><br><span class="line">		<span class="keyword">if</span> (q-&gt;lchild) &#123;</span><br><span class="line">			rear = (rear + <span class="number">1</span>) % maxsize;</span><br><span class="line">			que[rear] = q-&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (q-&gt;rchild) &#123;</span><br><span class="line">			rear = (rear + <span class="number">1</span>) % maxsize;</span><br><span class="line">			que[rear] = q-&gt;rchild;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="求二叉树的深度"><a href="#求二叉树的深度" class="headerlink" title="求二叉树的深度"></a>求二叉树的深度</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getBTDepth</span><span class="params">(BTNode* bt)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ldepth, rdepth;</span><br><span class="line">	<span class="keyword">if</span> (bt==<span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		ldepth = getBTDepth(bt-&gt;lchild);</span><br><span class="line">		rdepth = getBTDepth(bt-&gt;rchild);</span><br><span class="line">		<span class="keyword">return</span> (ldepth &gt; rdepth ? ldepth : rdepth) + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="求二叉树的宽度"><a href="#求二叉树的宽度" class="headerlink" title="求二叉树的宽度"></a>求二叉树的宽度</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	BTNode* p;</span><br><span class="line">	<span class="keyword">int</span> ino;</span><br><span class="line">&#125;Qu;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMaxNode</span><span class="params">(BTNode* bt)</span> </span>&#123;</span><br><span class="line">	Qu <span class="built_in">queue</span>[maxsize];<span class="comment">//此处要注意不能Qu *que,因为这样只能存Qu *类型。</span></span><br><span class="line">	BTNode* q;</span><br><span class="line">	<span class="keyword">int</span> front, rear;</span><br><span class="line">	front = rear = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">max</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> Lno = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (bt) &#123;</span><br><span class="line">		<span class="built_in">queue</span>[++rear].p = bt;</span><br><span class="line">		<span class="built_in">queue</span>[rear].ino = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (front != rear) &#123;</span><br><span class="line">			q = <span class="built_in">queue</span>[++front].p;</span><br><span class="line">			Lno = <span class="built_in">queue</span>[front].ino;</span><br><span class="line">			<span class="keyword">if</span> (q-&gt;lchild) &#123;</span><br><span class="line">				<span class="built_in">queue</span>[++rear].p = q-&gt;lchild;</span><br><span class="line">				<span class="built_in">queue</span>[rear].ino = Lno + <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (q-&gt;rchild) &#123;</span><br><span class="line">				<span class="built_in">queue</span>[++rear].p = q-&gt;rchild;</span><br><span class="line">				<span class="built_in">queue</span>[rear].ino = Lno + <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">max</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= Lno;i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= rear;j++) </span><br><span class="line">			<span class="keyword">if</span> (i == <span class="built_in">queue</span>[j].ino)</span><br><span class="line">				n++;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">max</span> &lt; n)</span><br><span class="line">				<span class="built_in">max</span> = n;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>附上测试用的main函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	BTNode* node = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">char</span>* ch = <span class="string">"ABCDEFG"</span>;</span><br><span class="line">	createBT(node,ch,<span class="number">0</span>,<span class="built_in">strlen</span>(ch));</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="string">"递归先序遍历:"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	preOrder(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"非递归先序遍历:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	preOrderNonrecursion(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"递归中序遍历:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	inOrder(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"非递归中序遍历:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	inOrderNonCursion(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"递归后序遍历:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	postOrder(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"非递归后序遍历:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	postOrderNonRecursion(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"层次遍历:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	level(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"二叉树深度为:"</span> &lt;&lt; getBTDepth(node);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"二叉树宽度为:"</span> &lt;&lt; getMaxNode(node);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行结果 <br></li>
+</ul>
+<p>1.先序序列 ：DBACFEG<br><br>2.中序序列 ：ABCDEFG <br><br>3.后序序列 ：ACBEGFD<br><br>4.层次遍历 : DBFACEG<br><br>5.深度3，宽度4</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考研</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-KMP算法-next-nextval手动求法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -462,11 +604,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
         		</li>
       		
 		</ul>
@@ -1025,103 +1167,6 @@
 
 
   
-    <article id="post-桶排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/%E6%A1%B6%E6%8E%92%E5%BA%8F/">桶排序二题</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/%E6%A1%B6%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.596Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h1><p>适合元素值集合并不大的情况。<br>桶排序又叫箱排序，是计数排序的升级版，它的工作原理是将数组分到有限数量的桶子里，然后对每个桶子再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序），最后将各个桶中的数据有序的合并起来。</p>
-<p>计数排序是桶排序的一种特殊情况，可以把计数排序当成每个桶里只有一个元素的情况。网络中很多博文写的桶排序实际上都是计数排序，并非标准的桶排序，要注意辨别。</p>
-<h2 id="leetcode-347-Top-K-Frequent-Elements-Medium"><a href="#leetcode-347-Top-K-Frequent-Elements-Medium" class="headerlink" title="leetcode 347 Top K Frequent Elements (Medium)"></a>leetcode 347 Top K Frequent Elements (Medium)</h2><p>设置若干个桶，每个桶存储出现频率相同的数。桶的下标表示数出现的频率，即第 i 个桶中存储的数出现的频率为 i。</p>
-<p>把数都放到桶之后，从后向前遍历桶，最先得到的 k 个数就是出现频率最多的的 k 个数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        System.out.println(topKFrenquent(nums, <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">topKFrenquent</span><span class="params">(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; freenqucyForNum =  <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            <span class="comment">/*把数字和出现的频率保存到HashMap*/</span></span><br><span class="line">            freenqucyForNum.put(num, freenqucyForNum.getOrDefault(num, <span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt;[] buckets = <span class="keyword">new</span> ArrayList[nums.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> key :freenqucyForNum.keySet())&#123;</span><br><span class="line">            <span class="keyword">int</span> frequency = freenqucyForNum.get(key);</span><br><span class="line">            <span class="keyword">if</span>(buckets[frequency]==<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="comment">/*每一个频率都包含一些数字*/</span></span><br><span class="line">                buckets[frequency] = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/*每个桶存储频率相同的数*/</span></span><br><span class="line">            buckets[frequency].add(key);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; topK = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">/*从后向前遍历，直到第K个*/</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=buckets.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>&amp;&amp;topK.size()&lt;k;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(buckets[i]==<span class="keyword">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">/*如果该频率的数字的数目小于还剩下的个数,那就都放进topK*/</span></span><br><span class="line">            <span class="keyword">if</span>(buckets[i].size()&lt;=(k-topK.size()))</span><br><span class="line">            topK.addAll(buckets[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            <span class="comment">/*如果该频率的数字数目大于还剩下的数目那就截取前几个数字*/</span></span><br><span class="line">            topK.addAll(buckets[i].subList(<span class="number">0</span>, k-topK.size()));</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">return</span> topK;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="451-Sort-Characters-By-Frequency-Medium"><a href="#451-Sort-Characters-By-Frequency-Medium" class="headerlink" title="451. Sort Characters By Frequency (Medium)"></a>451. Sort Characters By Frequency (Medium)</h2><p>Input:<br>“tree”</p>
-<p>Output:<br>“eert”</p>
-<p>Explanation:<br>‘e’ appears twice while ‘r’ and ‘t’ both appear once.<br>So ‘e’ must appear before both ‘r’ and ‘t’. Therefore “eetr” is also a valid answer.</p>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">桶排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/%E6%A1%B6%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next</a>
@@ -1263,51 +1308,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考研</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">wx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">BlockChain</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web3j</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1331,6 +1332,66 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">BlockChain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web3j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">考研</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">App</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
@@ -1343,31 +1404,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1376,6 +1417,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
             
             <div class="clearfix"></div>

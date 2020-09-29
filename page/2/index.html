@@ -200,6 +200,96 @@
             
 
   
+    <article id="post-微信小程序Picker巨坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FPicker%E5%B7%A8%E5%9D%91/">记录一个微信小程序的巨坑Picker</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FPicker%E5%B7%A8%E5%9D%91/" class="archive-article-date">
+        <time datetime="2020-04-22T07:52:46.607Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>暂时解决了这个问题，可能有bug</p>
+<h2 id="相关代码"><a href="#相关代码" class="headerlink" title="相关代码"></a>相关代码</h2><p>js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">//微信巨坑，取不到对象的属性     设定ObjectArray</span></span><br><span class="line">    role: [&#123; <span class="attr">key</span>: <span class="string">'患者'</span>, <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'医生'</span>,<span class="attr">value</span>: <span class="number">2</span>&#125;,&#123;<span class="attr">key</span>:<span class="string">'药店'</span>,<span class="attr">value</span>: <span class="number">3</span>&#125;],</span><br><span class="line">    index:<span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line"> bindPickerChange: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'picker发送选择改变，携带值为'</span>, e.detail.value)</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      <span class="comment">//picker返回的数据是下标  微信巨坑</span></span><br><span class="line">      index: e.detail.value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>wxml文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">picker</span> <span class="attr">bindchange</span>=<span class="string">"bindPickerChange"</span> <span class="attr">name</span>=<span class="string">"role"</span> <span class="attr">range</span>=<span class="string">'&#123;&#123;role&#125;&#125;'</span> <span class="attr">range-key</span>=<span class="string">"key"</span> <span class="attr">value</span>=<span class="string">"&#123;&#123;role[index].value&#125;&#125;"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"picker"</span>&gt;</span></span><br><span class="line">     选择您的身份：&#123;&#123; role[index].key &#125;&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">picker</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">wx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FPicker%E5%B7%A8%E5%9D%91/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-桶排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -253,11 +343,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">桶排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">桶排序</a>
         		</li>
       		
 		</ul>
@@ -1107,109 +1197,6 @@
 
 
   
-    <article id="post-web前后端漏洞分析与防御(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/22/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%E4%B8%8E%E9%98%B2%E5%BE%A1(%E4%B8%80)/">web前后端漏洞分析与防御(一)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/22/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%E4%B8%8E%E9%98%B2%E5%BE%A1(%E4%B8%80)/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.504Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="XSS-Cross-Site-Scripting-跨站脚本攻击"><a href="#XSS-Cross-Site-Scripting-跨站脚本攻击" class="headerlink" title="XSS Cross Site Scripting 跨站脚本攻击"></a>XSS Cross Site Scripting 跨站脚本攻击</h2><p>自己的网站运行了别的东西</p>
-<ul>
-<li>获取页面数据</li>
-<li>获取Cookies</li>
-<li>劫持前端逻辑</li>
-<li>发送请求</li>
-<li>偷取网站任意数据</li>
-<li>偷取用户资料</li>
-<li>偷取用户密码和登录态</li>
-<li>欺骗用户
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安全</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">XSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/22/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90%E4%B8%8E%E9%98%B2%E5%BE%A1(%E4%B8%80)/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/"> Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next</a>
@@ -1375,10 +1362,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">BlockChain</a>
               </li>
              
@@ -1395,6 +1378,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -1407,6 +1394,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
              
@@ -1416,14 +1407,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mvp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1447,11 +1430,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1460,14 +1455,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
             
             <div class="clearfix"></div>

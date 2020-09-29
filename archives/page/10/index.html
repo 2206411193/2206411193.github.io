@@ -6,24 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://2206411193.github.io">
-  <title>Springboot整合Mybatis(保姆级，长文慎读！) | 邱智斌的个人博客</title>
+  <title>Archives | 邱智斌的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一般过程，这篇文章写得比较详细 点击跳转. 但是操作起来总是有一些意料不到的结果，此文主要列出一些我遇到过的疑难杂症。 开发环境 windows 10 专业版 IDEA 2019.3 (插件丰富，改进不少，特别是新的UI比较高大上) Spring boot 2.2.2 realease(采用最新版即可) 数据库 mysql-8.0.15-winx64 mysql-connector 8.0.15(">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Springboot整合Mybatis(保姆级，长文慎读！)">
-<meta property="og:url" content="https://2206411193.github.io/2020/04/22/SpringBoot%E6%95%B4%E5%90%88Mybatis(%E6%9D%82%E7%97%87)/index.html">
+  <meta name="description" content="本站是邱智斌的个人分享博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="邱智斌的个人博客">
+<meta property="og:url" content="https://2206411193.github.io/archives/page/10/index.html">
 <meta property="og:site_name" content="邱智斌的个人博客">
-<meta property="og:description" content="一般过程，这篇文章写得比较详细 点击跳转. 但是操作起来总是有一些意料不到的结果，此文主要列出一些我遇到过的疑难杂症。 开发环境 windows 10 专业版 IDEA 2019.3 (插件丰富，改进不少，特别是新的UI比较高大上) Spring boot 2.2.2 realease(采用最新版即可) 数据库 mysql-8.0.15-winx64 mysql-connector 8.0.15(">
-<meta property="article:published_time" content="2020-04-22T07:52:46.483Z">
-<meta property="article:modified_time" content="2020-02-11T03:54:07.644Z">
+<meta property="og:description" content="本站是邱智斌的个人分享博客">
 <meta property="article:author" content="邱智斌">
-<meta property="article:tag" content="Springboot">
-<meta property="article:tag" content="mybatis">
-<meta property="article:tag" content="log4j2">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="lambok">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="区块链，数据结构，算法，python">
+<meta property="article:tag" content="JavaWeb">
+<meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
   
   
@@ -197,244 +194,69 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot整合Mybatis(杂症)" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/04/22/%E7%94%A8java%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8C%BA%E5%9D%97%E9%93%BE/" class="archive-article-date">
+        <time datetime="2020-04-22T07:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+
+        </div>
+    	 
   
-  
-    <h1 class="article-title" itemprop="name">
-      Springboot整合Mybatis(保姆级，长文慎读！)
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2020/04/22/%E7%94%A8java%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8C%BA%E5%9D%97%E9%93%BE/">用java创建第一条区块链</a>
+	
     </h1>
   
 
 
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/04/22/SpringBoot%E6%95%B4%E5%90%88Mybatis(%E6%9D%82%E7%97%87)/" class="archive-article-date">
-        <time datetime="2020-04-22T07:52:46.483Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.2k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">11分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>一般过程，这篇文章写得比较详细 <a href="https://blog.csdn.net/iku5200/article/details/82856621" target="_blank" rel="noopener">点击跳转</a>. 但是操作起来总是有一些意料不到的结果，此文主要列出一些我遇到过的疑难杂症。</p>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
-<li>windows 10 专业版</li>
-<li>IDEA 2019.3 (插件丰富，改进不少，特别是新的UI比较高大上)</li>
-<li>Spring boot 2.2.2 realease(采用最新版即可)</li>
-<li>数据库 mysql-8.0.15-winx64</li>
-<li>mysql-connector 8.0.15(最好采用一致的，但是会涉及到一些编码，时区问题，待会会提出解决方案)</li>
-</ul>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>Springboot+maven+mybatis<br>这里只提出杂症，具体怎么创建结构，移步上方链接。</p>
-<h2 id="连接mysql"><a href="#连接mysql" class="headerlink" title="连接mysql"></a>连接mysql</h2><ul>
-<li><p>pom.xml添加</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>高版本mysqlconnector<br>驱动：com.mysql.cj.jdbc.Driver<br> 参考url写法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: jdbc:mysql:<span class="comment">//127.0.0.1:3306/prescription?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</span></span><br></pre></td></tr></table></figure>
-<p>有时区要求：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc:mysql:<span class="comment">//localhost:3306/prescription?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>低版本写到数据库名即可，驱动中没有cj<h2 id="集成Mybatis"><a href="#集成Mybatis" class="headerlink" title="集成Mybatis"></a>集成Mybatis</h2>如果在创建项目时没有勾选mybatis,那也没有关系，pom.xml文件中添加<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-即可。</li>
-</ul>
-</li>
-<li><p>mybatis插件点击dao即可跳转到对应的mapper</p>
-<h4 id="去插件商店直接下载即可（不显示多点几次或者vpn）"><a href="#去插件商店直接下载即可（不显示多点几次或者vpn）" class="headerlink" title="去插件商店直接下载即可（不显示多点几次或者vpn）"></a>去插件商店直接下载即可（不显示多点几次或者vpn）</h4></li>
-<li><p>一直是红色的，下载不下来。(idea镜像在国外)</p>
-<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>打开C:\Users\Administrator\ .m2(如果找不到可能是隐藏了)，打开setting.xml(没有则创建)，将里面内容删掉，替换成一下内容（阿里云）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>uk<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://uk.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>CN<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>OSChina Central<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.oschina.net/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>internal nexus repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;url&gt;http://192.168.1.100:8081/nexus/content/groups/public/&lt;/url&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.maven.apache.org/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>再次尝试下载即可。</p>
-<h4 id="还是不行？"><a href="#还是不行？" class="headerlink" title="还是不行？"></a>还是不行？</h4></li>
-<li><p>点击右侧的maven多构建几次（基本没用）</p>
-</li>
-<li><p>搭建vpn或者ssr网络100%管用。</p>
-</li>
-<li><p>尝试进入文件目录删除以前没有下载完整的jar包</p>
-<h2 id="mybatis-generator逆向工程"><a href="#mybatis-generator逆向工程" class="headerlink" title="mybatis-generator逆向工程"></a>mybatis-generator逆向工程</h2><p>最简单的配置如下，</p>
-</li>
-<li><p>在resources目录下新建generator.xml,将以下内容贴入，记得数据库信息和生成文件路径更改。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">generatorConfiguration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--数据库驱动--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classPathEntry</span>    <span class="attr">location</span>=<span class="string">"C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"DB2Tables"</span>    <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressDate"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据库链接地址账号密码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span> <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://localhost:3306/prescription"</span> <span class="attr">userId</span>=<span class="string">"root"</span> <span class="attr">password</span>=<span class="string">"917013"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成Model类存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.qzb.prescription_server.entity"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成映射文件存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.qzb.prescription_server.mapping"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成Dao类存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.qzb.prescription_server.dao"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--对应的数据库表及model中生成的类名--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"user"</span> <span class="attr">domainObjectName</span>=<span class="string">"User"</span> <span class="attr">enableCountByExample</span>=<span class="string">"false"</span> <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span> <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span> <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span> <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">* 在pom.xml文件的build,plugins下添加</span><br><span class="line">  ```xml</span><br><span class="line">   <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>idea右侧有maven，点击找到mybatis-genernator直接点击运行即可。</p>
-<h4 id="生成过程中报错"><a href="#生成过程中报错" class="headerlink" title="生成过程中报错"></a>生成过程中报错</h4><p>mysql-connector新版本的问题，要求指定时区，ssl等，这个问题我采取的方案是将驱动换成低版本的比如是5.1.6，去maven或者官网直接下载即可，然后在配置文件中指定路径。</p>
-<h4 id="找不到生成的文件"><a href="#找不到生成的文件" class="headerlink" title="找不到生成的文件"></a>找不到生成的文件</h4><p>路径错了，仔细检查一下路径。</p>
-<a id="more"></a>
-<h2 id="引入log4j2日志系统"><a href="#引入log4j2日志系统" class="headerlink" title="引入log4j2日志系统"></a>引入log4j2日志系统</h2><p>具体是什么问度娘就知道了</p>
-</li>
-<li><p>在resources目录下创建log4j2.xml文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"LOG_HOME"</span>&gt;</span>./logs<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Appenders</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--*********************控制台日志***********************--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">"consoleAppender"</span> <span class="attr">target</span>=<span class="string">"SYSTEM_OUT"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--设置日志格式及颜色--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">pattern</span>=<span class="string">"%style&#123;%d&#123;ISO8601&#125;&#125;&#123;bright,green&#125; %highlight&#123;%-5level&#125; [%style&#123;%t&#125;&#123;bright,blue&#125;] %style&#123;%C&#123;1.&#125;&#125;&#123;bright,yellow&#125;: %msg%n%style&#123;%throwable&#125;&#123;red&#125;"</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">disableAnsi</span>=<span class="string">"false"</span> <span class="attr">noConsoleNoAnsi</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Console</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--*********************文件日志***********************--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--debug级别日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">"debugFileAppender"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">fileName</span>=<span class="string">"$&#123;LOG_HOME&#125;/debug.log"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">filePattern</span>=<span class="string">"$&#123;LOG_HOME&#125;/$$&#123;date:yyyy-MM&#125;/debug-%d&#123;yyyy-MM-dd&#125;-%i.log.gz"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Filters</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--过滤掉info及更高级别日志--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ThresholdFilter</span> <span class="attr">level</span>=<span class="string">"info"</span> <span class="attr">onMatch</span>=<span class="string">"DENY"</span> <span class="attr">onMismatch</span>=<span class="string">"NEUTRAL"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Filters</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--设置日志格式--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d %p %C&#123;1.&#125; [%t] %m%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 设置日志文件切分参数 --&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">"10 MB"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--info级别日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">"infoFileAppender"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">fileName</span>=<span class="string">"$&#123;LOG_HOME&#125;/info.log"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">filePattern</span>=<span class="string">"$&#123;LOG_HOME&#125;/$$&#123;date:yyyy-MM&#125;/info-%d&#123;yyyy-MM-dd&#125;-%i.log.gz"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Filters</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--过滤掉warn及更高级别日志--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ThresholdFilter</span> <span class="attr">level</span>=<span class="string">"warn"</span> <span class="attr">onMatch</span>=<span class="string">"DENY"</span> <span class="attr">onMismatch</span>=<span class="string">"NEUTRAL"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Filters</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--设置日志格式--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d %p %C&#123;1.&#125; [%t] %m%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 设置日志文件切分参数 --&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">"10 MB"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--warn级别日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">"warnFileAppender"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">fileName</span>=<span class="string">"$&#123;LOG_HOME&#125;/warn.log"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">filePattern</span>=<span class="string">"$&#123;LOG_HOME&#125;/$$&#123;date:yyyy-MM&#125;/warn-%d&#123;yyyy-MM-dd&#125;-%i.log.gz"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Filters</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--过滤掉error及更高级别日志--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ThresholdFilter</span> <span class="attr">level</span>=<span class="string">"error"</span> <span class="attr">onMatch</span>=<span class="string">"DENY"</span> <span class="attr">onMismatch</span>=<span class="string">"NEUTRAL"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Filters</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--设置日志格式--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d %p %C&#123;1.&#125; [%t] %m%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 设置日志文件切分参数 --&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">"10 MB"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--error及更高级别日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">"errorFileAppender"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">fileName</span>=<span class="string">"$&#123;LOG_HOME&#125;/error.log"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">filePattern</span>=<span class="string">"$&#123;LOG_HOME&#125;/$$&#123;date:yyyy-MM&#125;/error-%d&#123;yyyy-MM-dd&#125;-%i.log.gz"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--设置日志格式--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d %p %C&#123;1.&#125; [%t] %m%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 设置日志文件切分参数 --&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">"10 MB"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--json格式error级别日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">"errorJsonAppender"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">fileName</span>=<span class="string">"$&#123;LOG_HOME&#125;/error-json.log"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">filePattern</span>=<span class="string">"$&#123;LOG_HOME&#125;/error-json-%d&#123;yyyy-MM-dd&#125;-%i.log.gz"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">JSONLayout</span> <span class="attr">compact</span>=<span class="string">"true"</span> <span class="attr">eventEol</span>=<span class="string">"true"</span> <span class="attr">locationInfo</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">"10 MB"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span> <span class="attr">interval</span>=<span class="string">"1"</span> <span class="attr">modulate</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Appenders</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Loggers</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 根日志设置 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Root</span> <span class="attr">level</span>=<span class="string">"debug"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"consoleAppender"</span> <span class="attr">level</span>=<span class="string">"info"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"debugFileAppender"</span> <span class="attr">level</span>=<span class="string">"debug"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"infoFileAppender"</span> <span class="attr">level</span>=<span class="string">"info"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"warnFileAppender"</span> <span class="attr">level</span>=<span class="string">"warn"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"errorFileAppender"</span> <span class="attr">level</span>=<span class="string">"error"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"errorJsonAppender"</span> <span class="attr">level</span>=<span class="string">"error"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Root</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--spring日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Logger</span> <span class="attr">name</span>=<span class="string">"org.springframework"</span> <span class="attr">level</span>=<span class="string">"info"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--druid数据源日志--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Logger</span> <span class="attr">name</span>=<span class="string">"druid.sql.Statement"</span> <span class="attr">level</span>=<span class="string">"warn"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- mybatis日志 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Logger</span> <span class="attr">name</span>=<span class="string">"com.mybatis"</span> <span class="attr">level</span>=<span class="string">"warn"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Loggers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以直接使用，具体怎么配置可以看官方文档。</p>
-<h3 id="提示bind了两个文件"><a href="#提示bind了两个文件" class="headerlink" title="提示bind了两个文件"></a>提示bind了两个文件</h3><p>原因:springboot默认依赖的logging与log4j2冲突，为什么会冲突（baidu or google）</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4></li>
-<li><p>修改pom.xml</p>
-<h5 id="添加以下内容："><a href="#添加以下内容：" class="headerlink" title="添加以下内容："></a>添加以下内容：</h5></li>
-<li><p>添加依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>将不需要的以来排除,找对位置，添加<exclusions>之间的内容</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.vintage<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-vintage-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="未完待续。"><a href="#未完待续。" class="headerlink" title="未完待续。"></a>未完待续。</h2></li>
-</ul>
-
-    
-
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          邱智斌
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://2206411193.github.io/2020/04/22/SpringBoot整合Mybatis(杂症)/" title="Springboot整合Mybatis(保姆级，长文慎读！)" target="_blank">https://2206411193.github.io/2020/04/22/SpringBoot整合Mybatis(杂症)/</a>
-        </li>
-        <li>
-          <strong>版权声明： </strong>
-          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-        </li>
-      </ul>
-    </div>
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Springboot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">log4j2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">lambok</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">BlockChain</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2020/04/22/travel/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          旅游网站
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/04/22/springboot%E9%80%9A%E8%BF%87web3j%E6%9E%84%E5%BB%BA%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BA%94%E7%94%A8%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用java创建第一条区块链</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发环境"><span class="toc-number">1.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目结构"><span class="toc-number">2.</span> <span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接mysql"><span class="toc-number">3.</span> <span class="toc-text">连接mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集成Mybatis"><span class="toc-number">4.</span> <span class="toc-text">集成Mybatis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#去插件商店直接下载即可（不显示多点几次或者vpn）"><span class="toc-number">4.0.1.</span> <span class="toc-text">去插件商店直接下载即可（不显示多点几次或者vpn）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决方案："><span class="toc-number">4.0.2.</span> <span class="toc-text">解决方案：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#还是不行？"><span class="toc-number">4.0.3.</span> <span class="toc-text">还是不行？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mybatis-generator逆向工程"><span class="toc-number">5.</span> <span class="toc-text">mybatis-generator逆向工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#生成过程中报错"><span class="toc-number">5.0.1.</span> <span class="toc-text">生成过程中报错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#找不到生成的文件"><span class="toc-number">5.0.2.</span> <span class="toc-text">找不到生成的文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入log4j2日志系统"><span class="toc-number">6.</span> <span class="toc-text">引入log4j2日志系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#提示bind了两个文件"><span class="toc-number">6.1.</span> <span class="toc-text">提示bind了两个文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解决方案"><span class="toc-number">6.1.1.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#添加以下内容："><span class="toc-number">6.1.1.1.</span> <span class="toc-text">添加以下内容：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待续。"><span class="toc-number">7.</span> <span class="toc-text">未完待续。</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/9/">Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span>
+    </nav>
+  
 
 
           </div>
@@ -479,8 +301,8 @@
 	var yiliaConfig = {
 		mathjax: 'true',
 		isHome: 'false',
-		isPost: 'true',
-		isArchive:'false',
+		isPost: 'false',
+		isArchive:'true',
 		isTag: 'false',
 		isCategory: 'false',
 		open_in_new: 'false',

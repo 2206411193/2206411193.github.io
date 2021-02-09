@@ -5,7 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://2206411193.github.io">
+  <link rel="dns-prefetch" href="https://qiuzhibin.top">
   <title>若依-springCloud搭建踩坑 | 邱智斌的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,22 +13,22 @@
   <meta name="description" content="1、 系统搭建步骤1.1、安装Redis服务端和客户端1.2、导入数据库创建数据库ry-cloud并导入数据脚本ry_20210108.sql（必须），quartz.sql（可选）  导入数据脚本ry_config_20201222.sql 1.3、安装Nacos并配置MySQL数据库连接Nacos中文文档地址： https:&#x2F;&#x2F;nacos.io&#x2F;zh-cn&#x2F;docs&#x2F;quick-start.ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="若依-springCloud搭建踩坑">
-<meta property="og:url" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/index.html">
+<meta property="og:url" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="邱智斌的个人博客">
 <meta property="og:description" content="1、 系统搭建步骤1.1、安装Redis服务端和客户端1.2、导入数据库创建数据库ry-cloud并导入数据脚本ry_20210108.sql（必须），quartz.sql（可选）  导入数据脚本ry_config_20201222.sql 1.3、安装Nacos并配置MySQL数据库连接Nacos中文文档地址： https:&#x2F;&#x2F;nacos.io&#x2F;zh-cn&#x2F;docs&#x2F;quick-start.ht">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C01.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C02.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C03.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C04.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C05.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C06.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C07.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C08.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C09.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C10.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C11.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C12.png">
-<meta property="og:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C13.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C01.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C02.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C03.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C04.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C05.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C06.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C07.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C08.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C09.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C10.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C11.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C12.png">
+<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C13.png">
 <meta property="article:published_time" content="2021-02-09T08:20:04.860Z">
 <meta property="article:modified_time" content="2021-02-09T08:22:03.114Z">
 <meta property="article:author" content="邱智斌">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="若依">
 <meta property="article:tag" content="SpringCloud">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://2206411193.github.io/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C01.png">
+<meta name="twitter:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/images%5C01.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -365,7 +365,7 @@ http {
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://2206411193.github.io/2021/02/09/若依-springCloud搭建踩坑/" title="若依-springCloud搭建踩坑" target="_blank">https://2206411193.github.io/2021/02/09/若依-springCloud搭建踩坑/</a>
+          <a href="https://qiuzhibin.top/2021/02/09/若依-springCloud搭建踩坑/" title="若依-springCloud搭建踩坑" target="_blank">https://qiuzhibin.top/2021/02/09/若依-springCloud搭建踩坑/</a>
         </li>
         <li>
           <strong>版权声明： </strong>

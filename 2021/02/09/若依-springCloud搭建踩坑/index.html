@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1、 系统搭建步骤1.1、安装Redis服务端和客户端1.2、导入数据库创建数据库ry-cloud并导入数据脚本ry_20210108.sql（必须），quartz.sql（可选）  导入数据脚本ry_config_20201222.sql 1.3、安装Nacos并配置MySQL数据库连接Nacos中文文档地址： https:&#x2F;&#x2F;nacos.io&#x2F;zh-cn&#x2F;docs&#x2F;quick-start.ht">
+  <meta name="description" content="RuoYi-Cloud 是一个 Java EE 企业级快速开发平台，基于经典技术组合（Spring Boot、Spring Cloud &amp; Alibaba、Vue、Element），内置模块如：部门管理、角色用户、菜单及按钮授权、数据权限、系统参数、日志管理、代码生成等。在线定时任务配置；支持集群，支持多数据源。 1、 系统搭建步骤1.1、安装Redis服务端和客户端1.2、导入数据库创建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="若依-springCloud搭建踩坑">
 <meta property="og:url" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="邱智斌的个人博客">
-<meta property="og:description" content="1、 系统搭建步骤1.1、安装Redis服务端和客户端1.2、导入数据库创建数据库ry-cloud并导入数据脚本ry_20210108.sql（必须），quartz.sql（可选）  导入数据脚本ry_config_20201222.sql 1.3、安装Nacos并配置MySQL数据库连接Nacos中文文档地址： https:&#x2F;&#x2F;nacos.io&#x2F;zh-cn&#x2F;docs&#x2F;quick-start.ht">
+<meta property="og:description" content="RuoYi-Cloud 是一个 Java EE 企业级快速开发平台，基于经典技术组合（Spring Boot、Spring Cloud &amp; Alibaba、Vue、Element），内置模块如：部门管理、角色用户、菜单及按钮授权、数据权限、系统参数、日志管理、代码生成等。在线定时任务配置；支持集群，支持多数据源。 1、 系统搭建步骤1.1、安装Redis服务端和客户端1.2、导入数据库创建">
 <meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/01.png">
 <meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/02.png">
 <meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/03.png">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/12.png">
 <meta property="og:image" content="https://qiuzhibin.top/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/13.png">
 <meta property="article:published_time" content="2021-02-09T08:20:04.860Z">
-<meta property="article:modified_time" content="2021-02-09T08:51:14.053Z">
+<meta property="article:modified_time" content="2021-02-09T09:03:49.011Z">
 <meta property="article:author" content="邱智斌">
 <meta property="article:tag" content="开源">
 <meta property="article:tag" content="若依">
@@ -242,7 +242,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">621字</span>
+      <span class="post-count">708字</span>
     </span>
   </span>
 
@@ -251,7 +251,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -262,7 +262,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="1、-系统搭建步骤"><a href="#1、-系统搭建步骤" class="headerlink" title="1、 系统搭建步骤"></a>1、 系统搭建步骤</h1><h2 id="1-1、安装Redis服务端和客户端"><a href="#1-1、安装Redis服务端和客户端" class="headerlink" title="1.1、安装Redis服务端和客户端"></a>1.1、安装Redis服务端和客户端</h2><h2 id="1-2、导入数据库"><a href="#1-2、导入数据库" class="headerlink" title="1.2、导入数据库"></a>1.2、导入数据库</h2><p>创建数据库<code>ry-cloud</code>并导入数据脚本<code>ry_20210108.sql</code>（必须），quartz.sql（可选）</p>
+    <p>RuoYi-Cloud 是一个 Java EE 企业级快速开发平台，基于经典技术组合（Spring Boot、Spring Cloud &amp; Alibaba、Vue、Element），内置模块如：部门管理、角色用户、菜单及按钮授权、数据权限、系统参数、日志管理、代码生成等。在线定时任务配置；支持集群，支持多数据源。</p>
+<h1 id="1、-系统搭建步骤"><a href="#1、-系统搭建步骤" class="headerlink" title="1、 系统搭建步骤"></a>1、 系统搭建步骤</h1><h2 id="1-1、安装Redis服务端和客户端"><a href="#1-1、安装Redis服务端和客户端" class="headerlink" title="1.1、安装Redis服务端和客户端"></a>1.1、安装Redis服务端和客户端</h2><h2 id="1-2、导入数据库"><a href="#1-2、导入数据库" class="headerlink" title="1.2、导入数据库"></a>1.2、导入数据库</h2><p>创建数据库<code>ry-cloud</code>并导入数据脚本<code>ry_20210108.sql</code>（必须），quartz.sql（可选）</p>
 <p><img src="/2021/02/09/%E8%8B%A5%E4%BE%9D-springCloud%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/01.png" alt="1611665601477"></p>
 <p><code>导入数据脚本</code>ry_config_20201222.sql</p>
 <h2 id="1-3、安装Nacos并配置MySQL数据库连接"><a href="#1-3、安装Nacos并配置MySQL数据库连接" class="headerlink" title="1.3、安装Nacos并配置MySQL数据库连接"></a>1.3、安装Nacos并配置MySQL数据库连接</h2><p>Nacos中文文档地址：</p>

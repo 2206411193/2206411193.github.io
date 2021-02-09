@@ -6,29 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://qiuzhibin.top">
-  <title>fuck you | 邱智斌的个人博客</title>
+  <title>二叉堆 | 邱智斌的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="沙雕阿凡提的故事">
+  <meta name="description" content="适用情况 添加元素  获取最大值 删除最大值 TOP k问题，从海量数据中找出前k个元素。  获取最大值如果做了全排序，太浪费时间，堆完美的实现上述要求，时间复杂度nlogn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fuck you">
-<meta property="og:url" content="https://qiuzhibin.top/2021/02/09/pscopy/index.html">
+<meta property="og:title" content="二叉堆">
+<meta property="og:url" content="https://qiuzhibin.top/2021/02/09/%E4%BA%8C%E5%8F%89%E5%A0%86%20copy/index.html">
 <meta property="og:site_name" content="邱智斌的个人博客">
-<meta property="og:description" content="沙雕阿凡提的故事">
-<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/pscopy/1.jpg">
-<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/pscopy/2.jpg">
-<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/pscopy/3.jpg">
-<meta property="og:image" content="https://qiuzhibin.top/2021/02/09/pscopy/4.jpg">
-<meta property="article:published_time" content="2021-02-09T09:41:30.399Z">
-<meta property="article:modified_time" content="2021-02-09T09:53:06.265Z">
+<meta property="og:description" content="适用情况 添加元素  获取最大值 删除最大值 TOP k问题，从海量数据中找出前k个元素。  获取最大值如果做了全排序，太浪费时间，堆完美的实现上述要求，时间复杂度nlogn">
+<meta property="og:image" content="https://i.loli.net/2020/01/16/9ZOLXdMPxza1riy.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/01/16/exlsU8ZtovWK6j4.jpg">
+<meta property="article:published_time" content="2021-02-09T10:03:23.053Z">
+<meta property="article:modified_time" content="2021-02-09T10:03:23.056Z">
 <meta property="article:author" content="邱智斌">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="区块链，数据结构，算法，python">
-<meta property="article:tag" content="JavaWeb">
-<meta property="article:tag" content="技术">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="二叉堆">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://qiuzhibin.top/2021/02/09/pscopy/1.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/16/9ZOLXdMPxza1riy.jpg">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -201,14 +197,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pscopy" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-二叉堆 copy" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      fuck you
+      二叉堆
     </h1>
   
 
@@ -220,8 +216,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2021/02/09/pscopy/" class="archive-article-date">
-        <time datetime="2021-02-09T09:41:30.399Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
+<a href="/2021/02/09/%E4%BA%8C%E5%8F%89%E5%A0%86%20copy/" class="archive-article-date">
+        <time datetime="2021-02-09T10:03:23.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
 </a>
 
   
@@ -234,7 +230,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">8字</span>
+      <span class="post-count">697字</span>
     </span>
   </span>
 
@@ -243,7 +239,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -254,7 +250,25 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="沙雕阿凡提的故事"><a href="#沙雕阿凡提的故事" class="headerlink" title="沙雕阿凡提的故事"></a>沙雕阿凡提的故事</h1><p><img src="/2021/02/09/pscopy/1.jpg" alt="1"><br><img src="/2021/02/09/pscopy/2.jpg" alt="2"><br><img src="/2021/02/09/pscopy/3.jpg" alt="3"><br><img src="/2021/02/09/pscopy/4.jpg" alt="4"></p>
+    <p><img src="https://i.loli.net/2020/01/16/9ZOLXdMPxza1riy.jpg" alt="q0.jpg"></p>
+<h3 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h3><ul>
+<li>添加元素 </li>
+<li>获取最大值</li>
+<li>删除最大值</li>
+<li>TOP k问题，从海量数据中找出前k个元素。</li>
+</ul>
+<p>获取最大值如果做了全排序，太浪费时间，堆完美的实现上述要求，时间复杂度nlogn</p>
+<a id="more"></a>
+
+<p>堆heap：重点研究<em>二叉堆</em>（完全二叉堆）</p>
+<h3 id="重要性质"><a href="#重要性质" class="headerlink" title="重要性质"></a>重要性质</h3><p>任意节点的值总是大于子节点（自己的节点）的值：最大堆，大根堆，大顶堆<br><br>任意节点的值总是小于于子节点（自己的节点）的值：最小堆，小根堆，小顶堆<br></p>
+<p>最大堆最大值就是根节点，最小堆最小值就是根节点<br><br>二叉堆就是一颗完全二叉树，大顶堆</p>
+<p>完全二叉堆，直接用数组存储，比较简单，从上到下，从左到右编号</p>
+<h3 id="规律（n是元素数量，i是索引）"><a href="#规律（n是元素数量，i是索引）" class="headerlink" title="规律（n是元素数量，i是索引）"></a>规律（n是元素数量，i是索引）</h3><p>如果编号为0,就是根节点<br>如果编号不为零，他的父节点编号为floor((i-1)/2)<br>若2i+1&lt;=n-1 他的左子节点编号是2i+1，若大于，无左子节点<br>若2i+2&lt;=n-1 他的右子节点编号是2i+2，若大于，无右子节点</p>
+<h3 id="二叉堆实现"><a href="#二叉堆实现" class="headerlink" title="二叉堆实现"></a>二叉堆实现</h3><p>  Comparator:List的sort方法根据特定的Comparator排序。使用list.sort(c )的形式排序，c就是这个特定的Comparator对象。Comparator就是我们比较的准则。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryHeap</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">Heap</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> E[] elements;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">private</span> Comparator&lt;E&gt; comparator;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinaryHeap</span><span class="params">(Comparator&lt;E&gt; comparator)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.comparator =  comparator;</span><br><span class="line">        <span class="keyword">this</span>.elements = (E[])<span class="keyword">new</span> Object[DEFAULT_CAPACITY];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinaryHeap</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> size;</span><br><span class="line">&#125;      </span><br><span class="line">  <span class="comment">//获取大小</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isEmty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> size ==<span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">        elements[i]=<span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    size = <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//添加元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(E element)</span></span>&#123;</span><br><span class="line"> <span class="comment">//确保容量足够</span></span><br><span class="line"> EnsureCapacity(size+<span class="number">1</span>);</span><br><span class="line">  <span class="comment">//添加元素到最后</span></span><br><span class="line"> elements[size++] = element;</span><br><span class="line"> <span class="comment">//（上滤logn）不断重复跟父节点比较，node&gt;父节点，交换，node小于父节点或者没有父节点，退出循环</span></span><br><span class="line"> shiftUp(size-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">EnsureCapacity</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 上滤 让index位置的元素上滤</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">shiftUp</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">    E e = elements[index];</span><br><span class="line">    <span class="comment">//index &gt; 0 表示有父节点</span></span><br><span class="line">    <span class="comment">//父节点的索引（index-1）/2</span></span><br><span class="line">     <span class="keyword">while</span>(index&gt;<span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">int</span> pindex = (index-<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">         E p = elements[pindex];</span><br><span class="line">         <span class="keyword">if</span>(compare(e, p)&lt;=<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">         <span class="comment">//交换</span></span><br><span class="line">         E temp = elements[index];</span><br><span class="line">         elements[index] = elements[pindex];</span><br><span class="line">         elements[pindex] = temp;</span><br><span class="line"></span><br><span class="line">         <span class="comment">//变换索引 父节点的位置变成子节点</span></span><br><span class="line">         index = pindex;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">()</span></span>&#123;</span><br><span class="line">    emptycheck();</span><br><span class="line">    <span class="keyword">return</span> elements[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">emptycheck</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(size==<span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException(<span class="string">"Heap is empty"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//比较</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(E e1, E e2)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> comparator!=<span class="keyword">null</span> ? comparator.compare(e1, e2):((Comparable&lt;E&gt;)e1).compareTo(e2);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<!-- more -->
+<p>其中上滤过程可以将交换过程优化，找到最后位置附上值即可，不必次次交换。<br><img src="https://i.loli.net/2020/01/16/exlsU8ZtovWK6j4.jpg" alt="c.jpg"></p>
 
     
 
@@ -269,7 +283,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://qiuzhibin.top/2021/02/09/pscopy/" title="fuck you" target="_blank">https://qiuzhibin.top/2021/02/09/pscopy/</a>
+          <a href="https://qiuzhibin.top/2021/02/09/二叉堆 copy/" title="二叉堆" target="_blank">https://qiuzhibin.top/2021/02/09/二叉堆 copy/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -283,6 +297,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉堆</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -325,7 +354,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#沙雕阿凡提的故事"><span class="toc-number">1.</span> <span class="toc-text">沙雕阿凡提的故事</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#适用情况"><span class="toc-number">1.</span> <span class="toc-text">适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重要性质"><span class="toc-number">2.</span> <span class="toc-text">重要性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#规律（n是元素数量，i是索引）"><span class="toc-number">3.</span> <span class="toc-text">规律（n是元素数量，i是索引）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉堆实现"><span class="toc-number">4.</span> <span class="toc-text">二叉堆实现</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -481,22 +510,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">wx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
@@ -517,6 +530,26 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">wx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">智能配电运维支持系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">BlockChain</a>
               </li>
              
@@ -526,34 +559,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,15 +574,43 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">App</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,11 +622,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,10 +650,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
@@ -622,14 +659,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">智能配电运维支持系统</a>
               </li>
             
             <div class="clearfix"></div>

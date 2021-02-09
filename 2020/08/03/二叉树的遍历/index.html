@@ -276,7 +276,7 @@
 <li>注 访问次数的统计以补足叶子的节点的空孩子节点为计数。</li>
 </ul>
 <hr>
-<p>普通遍历路线图。<br><img src="http://data.biancheng.net/uploads/allimg/181229/2-1Q22920434Q44.gif" alt=""></p>
+<p>普通遍历路线图。<br><img src="http://data.biancheng.net/uploads/allimg/181229/2-1Q22920434Q44.gif" alt></p>
 <h5 id="先序遍历（递归"><a href="#先序遍历（递归" class="headerlink" title="先序遍历（递归)"></a>先序遍历（递归)</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(BTNode *p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		visit(p);</span><br><span class="line">		preOrder(p-&gt;lchild);</span><br><span class="line">		preOrder(p-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="中序遍历（递归）"><a href="#中序遍历（递归）" class="headerlink" title="中序遍历（递归）"></a>中序遍历（递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">	</span><br><span class="line">	    inOrder(p-&gt;lchild);</span><br><span class="line">		visit(p);</span><br><span class="line">		inOrder(p-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="后序遍历（递归）"><a href="#后序遍历（递归）" class="headerlink" title="后序遍历（递归）"></a>后序遍历（递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">	</span><br><span class="line">		postOrder(p-&gt;lchild);</span><br><span class="line">		postOrder(p-&gt;rchild);</span><br><span class="line">		visit(p);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -285,7 +285,7 @@
 <h5 id="中序遍历（非递归）"><a href="#中序遍历（非递归）" class="headerlink" title="中序遍历（非递归）"></a>中序遍历（非递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrderNonCursion</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p) &#123;</span><br><span class="line">		BTNode* <span class="built_in">stack</span>[maxsize];</span><br><span class="line">		BTNode* q;</span><br><span class="line">		<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">		q = p;</span><br><span class="line">		<span class="comment">//循环（循环（将当前节点所有左子树入栈），如果栈不为空，出栈访问，找右孩子节点入栈）</span></span><br><span class="line">		<span class="keyword">while</span> (top != <span class="number">-1</span> || q != <span class="literal">NULL</span>) &#123;</span><br><span class="line">			<span class="keyword">while</span>(q != <span class="literal">NULL</span>) &#123;</span><br><span class="line">				<span class="built_in">stack</span>[++top] = q;</span><br><span class="line">				q = q-&gt;lchild;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//出栈会出现栈空的情况（某个节点没有左子树）</span></span><br><span class="line">			<span class="keyword">if</span> (top != <span class="number">-1</span>) &#123;</span><br><span class="line">				q = <span class="built_in">stack</span>[top--];</span><br><span class="line">				visit(q);</span><br><span class="line">				q = q-&gt;rchild;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">stack</span>[++top] = p;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="后序遍历（非递归）"><a href="#后序遍历（非递归）" class="headerlink" title="后序遍历（非递归）"></a>后序遍历（非递归）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrderNonRecursion</span><span class="params">(BTNode* bt)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (bt) &#123;</span><br><span class="line">		BTNode* stack1[maxsize];</span><br><span class="line">		BTNode* stack2[maxsize];</span><br><span class="line">		<span class="keyword">int</span> top1, top2;</span><br><span class="line">		top1 = top2 = <span class="number">-1</span>;</span><br><span class="line">		BTNode* q = <span class="literal">NULL</span>;</span><br><span class="line">		stack1[++top1] = bt;</span><br><span class="line">		<span class="keyword">while</span> (top1 != <span class="number">-1</span>) &#123;</span><br><span class="line">			q = stack1[top1--];</span><br><span class="line">			stack2[++top2] = q;</span><br><span class="line">			<span class="comment">//两个栈结构，反向两次，所以先入左孩子，再入右孩子</span></span><br><span class="line">			<span class="keyword">if</span> (q-&gt;lchild!=<span class="literal">NULL</span>) stack1[++top1] = q-&gt;lchild;</span><br><span class="line">			<span class="keyword">if</span> (q-&gt;rchild!=<span class="literal">NULL</span>) stack1[++top1] = q-&gt;rchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (top2 != <span class="number">-1</span>) &#123;</span><br><span class="line">			q = stack2[top2--];</span><br><span class="line">			visit(q);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>层次遍历路线图<br><img src="http://data.biancheng.net/uploads/allimg/181229/2-1Q2292043234L.gif" alt=""></p>
+<p>层次遍历路线图<br><img src="http://data.biancheng.net/uploads/allimg/181229/2-1Q2292043234L.gif" alt></p>
 <h5 id="层次遍历（循环队列）"><a href="#层次遍历（循环队列）" class="headerlink" title="层次遍历（循环队列）"></a>层次遍历（循环队列）</h5><p>维持一个队列，当前节点进队，若队不为空，（出队，若有左孩子左孩子进队，若有右孩子，右孩子进队）</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">level</span><span class="params">(BTNode* p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> front,rear;</span><br><span class="line">	BTNode *que[maxsize];</span><br><span class="line">	BTNode* q;</span><br><span class="line">	front = rear = <span class="number">0</span>;</span><br><span class="line">	rear = (rear + <span class="number">1</span>) % maxsize;</span><br><span class="line">	que[rear] = p;</span><br><span class="line">	<span class="keyword">while</span> (front != rear) &#123;</span><br><span class="line">		front = (front + <span class="number">1</span>) % maxsize;</span><br><span class="line">		q = que[front];</span><br><span class="line">		visit(q);</span><br><span class="line">		<span class="keyword">if</span> (q-&gt;lchild) &#123;</span><br><span class="line">			rear = (rear + <span class="number">1</span>) % maxsize;</span><br><span class="line">			que[rear] = q-&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (q-&gt;rchild) &#123;</span><br><span class="line">			rear = (rear + <span class="number">1</span>) % maxsize;</span><br><span class="line">			que[rear] = q-&gt;rchild;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -560,55 +560,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">wx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,19 +584,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">BlockChain</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,7 +592,87 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉堆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">App</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mvp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">BlockChain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web3j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,10 +688,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">红黑树</a>
               </li>
              
@@ -680,31 +696,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web3j</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">桶排序</a>
               </li>
             
             <div class="clearfix"></div>
